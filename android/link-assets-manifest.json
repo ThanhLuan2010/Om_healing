@@ -1,0 +1,113 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/BeVietnamPro-Black.ttf",
+      "sha1": "405a6e7828f292099161bf5cccb5402ec19f1833"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-BlackItalic.ttf",
+      "sha1": "cffbcaeae7ec6a4baabdcdd02227beddfaa49d5e"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-Bold.ttf",
+      "sha1": "0bd7e256f73efd0a8135c5090d62f150107ff37a"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-BoldItalic.ttf",
+      "sha1": "1a5d8555a995733597d706fe3d02a38aa48dcc44"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-Italic.ttf",
+      "sha1": "cd74c031ed87c52f81b12e1886133283f36cc44a"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-Light.ttf",
+      "sha1": "4c7d4497bc6b506d9fefdc8227418bbb637bc524"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-LightItalic.ttf",
+      "sha1": "e6985b646a67ed2885e15c3f5b23dab28246621b"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-Medium.ttf",
+      "sha1": "7525dd63d853386f3c192fa78502e547ea620e96"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-Regular.ttf",
+      "sha1": "03d9e7cd56b446b0585b36a46c3f4b140c6e0026"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-SemiBold.ttf",
+      "sha1": "1b8668d1e0f6949d9a702c2a590971ab7946a79f"
+    },
+    {
+      "path": "src/assets/fonts/BeVietnamPro-SemiBoldItalic.ttf",
+      "sha1": "6d432d0456dfc9f59a091444b5aae82f35c3df2d"
+    },
+    {
+      "path": "src/assets/fonts/Inter-ExtraBold.ttf",
+      "sha1": "bff772be6bca9895c6fdcd57e5d5be9a47f2e058"
+    },
+    {
+      "path": "src/assets/fonts/Inter-ExtraLight.ttf",
+      "sha1": "421072aef8610cb0f79661b494442a4b9363b43f"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Light.ttf",
+      "sha1": "dd9ec1ae67dd85143bacf7a3cb37e9f0ac979843"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Medium.ttf",
+      "sha1": "a418a8ba73bbcfa8c131c426ab836d78457afa9b"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Regular.ttf",
+      "sha1": "7237d9cf55f177702066a28a4dde1e4c7e8ab576"
+    },
+    {
+      "path": "src/assets/fonts/Inter-Thin.ttf",
+      "sha1": "297919d59c9ba4fa17251cdb9f06c26ca906e593"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-Black.ttf",
+      "sha1": "23f588cf0a4aecc073dc85fe7ec19b0e5a54763f"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-BlackItalic.ttf",
+      "sha1": "a584970d2ea44a5fbef6c31b387c721020837382"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-Bold.ttf",
+      "sha1": "82c0198acca27c08b1627a21a25a570f94e39238"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-BoldItalic.ttf",
+      "sha1": "35d741916bb028ca68dcfb570804ba2a93131c54"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-Italic.ttf",
+      "sha1": "a9628dd5e5ab503f735e9ca8757ebae0fdde8fc6"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-Light.ttf",
+      "sha1": "7a0dbc4d83b361998dba41505916ffb6bb4a728d"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-LightItalic.ttf",
+      "sha1": "28feb4e625aff6f823c3e320b1400cfc6c283bdc"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-Regular.ttf",
+      "sha1": "6f1994a1c51238058a5e4a05a5c3f00fcb0248a8"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-SemiBold.ttf",
+      "sha1": "3ae951835620e4d143333f5c0732765b727420a7"
+    },
+    {
+      "path": "src/assets/fonts/SourceSans3-SemiBoldItalic.ttf",
+      "sha1": "c9e3a9a33200d14b3f19bf85d2253f040da715b4"
+    }
+  ]
+}

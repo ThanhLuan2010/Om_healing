@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "655621137870",
+    "project_id": "vinafarm-f980b",
+    "storage_bucket": "vinafarm-f980b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:655621137870:android:8b95623f56e75f0e96379f",
+        "android_client_info": {
+          "package_name": "com.vina.farm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "655621137870-msid8dk0v76b9u7n30ugbcivhb1r1pkr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDj-9FeVHYCXw5DFL3sistcAEItBFKis0s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "655621137870-msid8dk0v76b9u7n30ugbcivhb1r1pkr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "655621137870-1vchn4mfau9n2kvjg4f98uhe065si5j9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.vina.farm"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
