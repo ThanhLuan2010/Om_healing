@@ -3,7 +3,7 @@ import { Block, GradientButton, Text } from "@components";
 import { goBack, navigate } from "@navigation/RootNavigation";
 import auth from "@react-native-firebase/auth";
 import { theme } from "@theme";
-import { setLoading, showAlert } from "@utils/navigator";
+import { setLoading } from "@utils/navigator";
 import { width } from "@utils/responsive";
 import React, { useEffect, useState } from "react";
 import {
@@ -15,31 +15,26 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import { showMessage } from "react-native-flash-message";
 import LinearGradient from "react-native-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useDispatch } from "react-redux";
 
 export default function LoginScreen({ navigation }) {
   useEffect(() => {}, []);
-
   const [security, setSecurity] = useState(true);
   const [securityRePass, setSecurityRepass] = useState(true);
-
   const [password, setpassword] = useState("");
   const [phone, setphone] = useState("");
   const [rePassword, setrePassword] = useState("");
-  const dispatch = useDispatch();
   const { top } = useSafeAreaInsets();
 
   const onRegister = async () => {
     if (rePassword !== password) {
-      showAlert(
-        "Thông báo",
-        "Xác nhận mật khẩu không khớp",
-        "Chập nhận",
-        "",
-        () => goBack()
-      );
+      showMessage({
+        message: "Thành công",
+        type: "warning",
+        description: "Xác nhận mật khẩu không khớp",
+      });
     }
     if (password && rePassword && phone && password === rePassword) {
       setLoading(true);

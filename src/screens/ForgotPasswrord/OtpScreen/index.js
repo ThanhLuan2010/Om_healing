@@ -1,16 +1,17 @@
-import { Pressable, StyleSheet, TextInput, Alert } from "react-native";
-import React, { useRef, useState, useCallback } from "react";
-import LinearGradient from "react-native-linear-gradient";
-import { theme } from "@theme";
-import { Block, Text } from "@components";
-import auth from "@react-native-firebase/auth";
-import { setLoading, showAlert } from "@utils/navigator";
 import { baseQuery } from "@api/baseQuery";
-import { goBack, navigate } from "@navigation/RootNavigation";
-// import OTPTextBlock from "react-native-otp-textinput";
-// // import OtpInputs, { OtpInputsRef } from "react-native-otp-inputs";
+import { Block, Text } from "@components";
+import { navigate } from "@navigation/RootNavigation";
+import { theme } from "@theme";
+import { setLoading } from "@utils/navigator";
+import { width } from "@utils/responsive";
+import React, { useRef, useState } from "react";
+import { Pressable, StyleSheet, TextInput } from "react-native";
+import { showMessage } from "react-native-flash-message";
+import LinearGradient from "react-native-linear-gradient";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 const OtpScreen = (props) => {
   const otpRef = useRef();
+  const { top } = useSafeAreaInsets();
   const [isFocused, setIsFocused] = useState({
     number_1: false,
     number_2: false,
@@ -44,12 +45,12 @@ const OtpScreen = (props) => {
   const [input_4, setInput_4] = React.useState();
   const [input_5, setInput_5] = React.useState();
   const [input_6, setInput_6] = React.useState();
-  const [time, setTime] = React.useState(20);
+  const [time, setTime] = React.useState(60);
   const timerRef = React.useRef(time);
   setLoading(false);
 
   const resend = () => {
-    setTime(20);
+    setTime(60);
   };
 
   React.useEffect(() => {
@@ -67,34 +68,35 @@ const OtpScreen = (props) => {
   }, []);
 
   const onRegister = async () => {
-    const response = await baseQuery({
-      url: "auth/register",
-      body: {
-        phone: props.route.params.phone,
-        password: props.route.params.password,
-        re_password: props.route.params.rePassword,
-      },
-      method: "POST",
-    });
-    const { status, message, data } = response;
-    setLoading(false);
-    if (status) {
-      showAlert(
-        "Thông báo",
-        message || "Đăng ký thành công",
-        "Đăng Nhập",
-        "Ẩn",
-        () => navigate("LoginScreen"),
-        () => goBack()
-      );
+    const type = props.route.params?.type;
+    if (type === "FOGOT") {
+      navigate("NewPassScreen", { phone: props.route.params.phone });
     } else {
-      showAlert(
-        "Thông báo",
-        message || "Đăng ký Thất bại",
-        "Chấp nhận",
-        "",
-        () => goBack()
-      );
+      const response = await baseQuery({
+        url: "auth/register",
+        body: {
+          phone: props.route.params.phone,
+          password: props.route.params.password,
+          re_password: props.route.params.rePassword,
+        },
+        method: "POST",
+      });
+      const { status, message, data } = response;
+      setLoading(false);
+      if (status) {
+        showMessage({
+          message: "Thành công",
+          type: "success",
+          description: message || "Đăng ký thành công",
+        });
+        () => navigate("LoginScreen");
+      } else {
+        showMessage({
+          message: "Thất bại",
+          type: "warning",
+          description: message || "Đăng ký thất bại",
+        });
+      }
     }
   };
   const confirmOTP = async (code) => {
@@ -104,24 +106,24 @@ const OtpScreen = (props) => {
       await phoneConfirmation.confirm(code);
       onRegister();
     } catch (error) {
-      console.log('=====error====',error)
+      console.log("========err=======", error);
       if (error && error.error === "DUPLICATED_USER") {
         onRegister();
       } else {
         setLoading(false);
-        showAlert("Thông báo", "Mã OTP không đúng", "Chấp nhận", "", () =>
-          goBack()
-        );
+        showMessage({
+          message: "Thất bại",
+          type: "warning",
+          description: "OTP không đúng",
+        });
       }
-      // this.setState({ showMessage: true });
-      // this.props.RootNavigation._toggleLoading(false);
     }
   };
   return (
     <>
       <LinearGradient
         colors={theme.colors.backgroundColor}
-        style={styles.backgroundColor}
+        style={[styles.backgroundColor, { paddingTop: top }]}
       >
         <Block paddingBottom={50} />
         <Block marginHorizontal={20}>
@@ -275,15 +277,12 @@ const styles = StyleSheet.create({
   backgroundColor: {
     flex: 1,
     justifyContent: "center",
-    paddingHorizontal: 20,
   },
   inputs: {
     borderRadius: 2,
     borderColor: theme.colors.gray2,
-    // paddingHorizontal: 10,
-    // // paddingVertical: ,
-    width: 46,
-    height: 46,
+    width: (width - 40) / 6.5,
+    height: (width - 40) / 6.5,
     textAlign: "center",
     color: theme.colors.black,
     fontWeight: "bold",
@@ -303,5 +302,9 @@ const styles = StyleSheet.create({
   },
   underLine: {
     textDecorationLine: "underline",
+  },
+  inputOtp: {
+    width: (width - 40) / 8,
+    height: (width - 40) / 8,
   },
 });

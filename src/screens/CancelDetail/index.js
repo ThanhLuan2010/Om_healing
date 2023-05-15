@@ -1,13 +1,11 @@
 import { baseQuery } from "@api/baseQuery";
-import { icons, images } from "@assets";
-import { Block, Button, GradientButton, Header, Text } from "@components";
-import { navigate } from "@navigation/RootNavigation";
+import { Block, Header, Text } from "@components";
 import { theme } from "@theme";
 import { formatPrice } from "@utils/helper";
 import { getSize, width } from "@utils/responsive";
 import moment from "moment";
-import React, { useState, useEffect } from "react";
-import { Image, Pressable, ScrollView, StyleSheet } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Image, ScrollView, StyleSheet } from "react-native";
 
 const CancelDetail = ({ route }) => {
   const [detail, setdetail] = useState({});
@@ -15,6 +13,7 @@ const CancelDetail = ({ route }) => {
   useEffect(() => {
     getDetail();
   }, []);
+  console.log("=====detail====", detail);
   const getDetail = async () => {
     const response = await baseQuery({
       url: "order/list",
@@ -68,7 +67,7 @@ const CancelDetail = ({ route }) => {
 
                 <Block flex alignCenter>
                   <Block
-                    backgroundColor={"#D9D9D9"}
+                    backgroundColor={"#10A31E"}
                     radius={10}
                     width={20}
                     height={20}
@@ -125,7 +124,7 @@ const CancelDetail = ({ route }) => {
               </Block>
             </Block>
 
-            <Block marginTop={26} row marginHorizontal={20}>
+            {/* <Block marginTop={26} row marginHorizontal={20}>
               <Text
                 color="#FF0000"
                 fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
@@ -138,7 +137,7 @@ const CancelDetail = ({ route }) => {
                 style={styles.ic_cancelPending}
                 source={images.ic_cancelPending}
               />
-            </Block>
+            </Block> */}
           </Block>
         </Block>
 

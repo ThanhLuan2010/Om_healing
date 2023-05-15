@@ -1,13 +1,13 @@
 import { baseQuery } from "@api/baseQuery";
-import { icons, images } from "@assets";
-import { Block, Button, GradientButton, Header, Text } from "@components";
+import { icons } from "@assets";
+import { Block, GradientButton, Header, Text } from "@components";
 import { goBack, navigate } from "@navigation/RootNavigation";
 import { theme } from "@theme";
 import { formatPrice } from "@utils/helper";
 import { setLoading, showOrderCTV } from "@utils/navigator";
 import moment from "moment";
-import React, { useState, useEffect } from "react";
-import { Alert, Image, Pressable, ScrollView, StyleSheet } from "react-native";
+import React from "react";
+import { Image, ScrollView, StyleSheet } from "react-native";
 
 const OrdersCTVDelivering = ({ route }) => {
   const { item } = route.params;
@@ -254,19 +254,23 @@ const OrdersCTVDelivering = ({ route }) => {
             </Text>
           </Block>
         </Block>
-        <GradientButton
-          title="Giao hàng thành công"
-          style={styles.button}
-          onPress={() => updateStatus(3)}
-        />
+        {item?.order_status !== 3 && item?.order_status !== -2 && (
+          <>
+            <GradientButton
+              title="Giao hàng thành công"
+              style={styles.button}
+              onPress={() => updateStatus(3)}
+            />
 
-        <GradientButton
-          title="Giao hàng thất bại"
-          style={styles.buttonCancel}
-          onPress={() => navigate("DeliveryFail", { item })}
-          colors={["transparent", "transparent"]}
-          styleTitle={{ color: "#FF0000" }}
-        />
+            <GradientButton
+              title="Giao hàng thất bại"
+              style={styles.buttonCancel}
+              onPress={() => navigate("DeliveryFail", { item })}
+              colors={["transparent", "transparent"]}
+              styleTitle={{ color: "#FF0000" }}
+            />
+          </>
+        )}
       </ScrollView>
     </Block>
   );

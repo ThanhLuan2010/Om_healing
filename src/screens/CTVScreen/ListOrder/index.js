@@ -1,22 +1,20 @@
+import { baseQuery } from "@api/baseQuery";
+import { images } from "@assets";
+import { Block, GradientButton, SearchBar, Text } from "@components";
+import { navigate } from "@navigation/RootNavigation";
+import { theme } from "@theme";
+import { formatPrice } from "@utils/helper";
+import { setLoading } from "@utils/navigator";
+import { getSize } from "@utils/responsive";
+import React, { useEffect, useState } from "react";
 import {
   ActivityIndicator,
-  Alert,
   Image,
   RefreshControl,
   ScrollView,
   StyleSheet,
-  TouchableOpacity,
-  View,
 } from "react-native";
-import React, { useState, useEffect } from "react";
-import { Block, GradientButton, SearchBar, Text } from "@components";
-import { baseQuery } from "@api/baseQuery";
-import { setLoading } from "@utils/navigator";
-import { navigate } from "@navigation/RootNavigation";
-import { formatPrice } from "@utils/helper";
-import { theme } from "@theme";
-import { getSize } from "@utils/responsive";
-import { images } from "@assets";
+import { useNavigation } from "@react-navigation/native";
 
 const ListOrder = () => {
   const [data, setdata] = useState([]);
@@ -25,6 +23,13 @@ const ListOrder = () => {
   const [canLoadMore, setcanLoadMore] = useState(true);
   const [isLoadmore, setisLoadmore] = useState(false);
   const [page, setpage] = useState(1);
+  const navigation = useNavigation();
+  useEffect(() => {
+    const ubsubcribe = navigation.addListener("focus", () => {
+      getData();
+    });
+    return ubsubcribe;
+  }, [navigation]);
   useEffect(() => {
     getData();
   }, []);

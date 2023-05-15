@@ -16,11 +16,14 @@ import { store } from "./store";
 import { RXStore } from "./store/configStore";
 import LoadingScreen from "@screens/LoadingScreen";
 import { height, width } from "@utils/responsive";
+import { codePushSelect, codePushSlice } from "@store/slices/codePush";
+import CodePushUpdate from "./modal/CodePushUpdate";
 
 const App = () => {
   const { isLoading } = useSelector(commonSelect);
   const [isLoadingView, setisLoadingView] = useState(true);
-
+  const { isUpdate, progres } = useSelector(codePushSelect);
+  console.log("=====progress====", progres);
   useEffect(() => {
     messaging().requestPermission();
     setTimeout(() => {
@@ -49,9 +52,14 @@ const App = () => {
           <LoadingScreen />
         </Block>
       )}
+      {isUpdate && (
+        <Block absolute width={width} height={height}>
+          <CodePushUpdate />
+        </Block>
+      )}
 
       <FlashMessage
-        style={{ backgroundColor: "#48DA5F", paddingTop: 40, borderRadius: 8 }}
+        style={{ paddingTop: 40, borderRadius: 8 }}
         position="top"
       />
     </>

@@ -28,7 +28,7 @@ PODS:
   - BVLinearGradient (2.6.2):
     - React-Core
   - CocoaAsyncSocket (7.6.5)
-  - CodePush (8.0.1):
+  - CodePush (7.1.0):
     - Base64 (~> 1.1)
     - JWT (~> 3.0.0-beta.12)
     - React-Core
@@ -581,18 +581,18 @@ PODS:
     - React-Core
     - SDWebImage (~> 5.11.1)
     - SDWebImageWebPCoder (~> 0.8.4)
-  - RNFBApp (17.4.3):
+  - RNFBApp (17.5.0):
     - Firebase/CoreOnly (= 9.6.0)
     - React-Core
-  - RNFBAuth (17.4.3):
+  - RNFBAuth (17.5.0):
     - Firebase/Auth (= 9.6.0)
     - React-Core
     - RNFBApp
-  - RNFBDatabase (17.4.3):
+  - RNFBDatabase (17.5.0):
     - Firebase/Database (= 9.6.0)
     - React-Core
     - RNFBApp
-  - RNFBMessaging (17.4.3):
+  - RNFBMessaging (17.5.0):
     - Firebase/Messaging (= 9.6.0)
     - FirebaseCoreExtension (= 9.6.0)
     - React-Core
@@ -948,7 +948,7 @@ SPEC CHECKSUMS:
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   BVLinearGradient: 34a999fda29036898a09c6a6b728b0b4189e1a44
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  CodePush: ff76ebc5c7c50fb198bae9caf0a3ad4f220fde88
+  CodePush: dce1b253fde81078249ea9cd4b948e4ac7b761a9
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 6c76fe46345039d5cf0549e9ddaf5aa169630a4a
   FBReactNativeSpec: 1a270246542f5c52248cb26a96db119cfe3cb760
@@ -1030,10 +1030,10 @@ SPEC CHECKSUMS:
   RNDateTimePicker: 65e1d202799460b286ff5e741d8baf54695e8abd
   RNDeviceInfo: 475a4c447168d0ad4c807e48ef5e0963a0f4eb1b
   RNFastImage: 5c9c9fed9c076e521b3f509fe79e790418a544e8
-  RNFBApp: 36b190c7131442d2e32fe81161a062cce60711de
-  RNFBAuth: 36044b52037e4f770f59511574cb2eb428507c12
-  RNFBDatabase: 33dbd6f2c2f50c0ab33cb602525492376717a8a9
-  RNFBMessaging: 9f3f247fe411330b6ac1e872925f40ecafa19e11
+  RNFBApp: 197491b507452d2b8598c50e13d66aaced5fed0b
+  RNFBAuth: 4accb7c62398bf0399b41766d817ffd28a34575a
+  RNFBDatabase: 4b80414bd241e859cb9d9aa5ac2e5590343ac13e
+  RNFBMessaging: 42ceac7e6e9ac93c7a73b8852d867c7208a15a82
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
   RNGoogleSignin: 81521697b2c8f97f9a586ac7257b1a1d9b51b115
   RNImageCropPicker: 648356d68fbf9911a1016b3e3723885d28373eda

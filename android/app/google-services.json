@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "655621137870",
+    "firebase_url": "https://vinafarm-f980b-default-rtdb.firebaseio.com",
     "project_id": "vinafarm-f980b",
     "storage_bucket": "vinafarm-f980b.appspot.com"
   },
@@ -13,6 +14,30 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "655621137870-b5vujlptinhta34mjj3g3cmqb97g6sh5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vina.farm",
+            "certificate_hash": "0ccd18c18fea51eacc20b5750a6217c8f8239797"
+          }
+        },
+        {
+          "client_id": "655621137870-fmc6bbhda1dc4tjd6b14essn08k7ed0f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vina.farm",
+            "certificate_hash": "94e09dcf71e4ef42175aaa62023f6a73e720d368"
+          }
+        },
+        {
+          "client_id": "655621137870-mi606iiphgo1sp8t8f8obg1t4ulcedn4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vina.farm",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
         {
           "client_id": "655621137870-msid8dk0v76b9u7n30ugbcivhb1r1pkr.apps.googleusercontent.com",
           "client_type": 3

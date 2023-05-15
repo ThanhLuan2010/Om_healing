@@ -14,7 +14,11 @@ const KeyboardWrap = ({ children }) => {
     });
   }, []);
 
-  return <Block backgroundColor={'white'} paddingBottom={keyboardHeight}>{children}</Block>;
+  return (
+    <Block flex backgroundColor={"transparent"} paddingBottom={keyboardHeight}>
+      {children}
+    </Block>
+  );
 };
 
 export default KeyboardWrap;

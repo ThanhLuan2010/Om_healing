@@ -8,7 +8,7 @@ export default StyleSheet.create({
   logo: {
     width: width - 46 * 2,
     height: 200,
-    resizeMode: "center",
+    resizeMode: "contain",
   },
   input: {
     flex: 1,

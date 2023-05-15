@@ -69,7 +69,7 @@ const AccountScreen = () => {
             marginTop={20}
             fontFamily={theme.fonts.fontFamily.BeVietnamPro_LightItalic}
           >
-            Phiên bản 1.0
+            Phiên bản 1.9
           </Text>
         </Block>
         <TouchableOpacity onPress={onLogout} style={styles.logout}>

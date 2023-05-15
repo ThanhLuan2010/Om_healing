@@ -1,21 +1,19 @@
 import { baseQuery } from "@api/baseQuery";
 import { Block, Header, Text } from "@components";
 import OrderProduct from "@components/OrderProduct";
-import { orderSelect, setListOrder } from "@store/slices/order";
-import { theme } from "@theme";
-import { width } from "@utils/responsive";
-import React, { useEffect, useRef, useState } from "react";
-import { RefreshControl, ScrollView, StyleSheet } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
-import TopTab from "./TopTab";
 import { setIsLoading } from "@store/slices/common";
+import { theme } from "@theme";
+import React, { useEffect, useState } from "react";
+import { RefreshControl, ScrollView, StyleSheet } from "react-native";
+import { useDispatch } from "react-redux";
+import TopTab from "./TopTab";
+import { useNavigation } from "@react-navigation/native";
 
 const OrderScreen = (props) => {
-  const refFlatListHorizontal = useRef(null);
   const [indexTab, setIndexTab] = useState(0);
-  // const { listOrder } = useSelector(orderSelect);
   const [refreshing, setrefreshing] = useState(false);
   const [listOrder, setlistOrder] = useState([]);
+  const navigation = useNavigation();
   const dispatch = useDispatch();
   useEffect(() => {
     if (props.route.params?.status === "success") {
@@ -39,6 +37,31 @@ const OrderScreen = (props) => {
     }
   }, []);
 
+  useEffect(() => {
+    const ubsubcribe = navigation.addListener("focus", () => {
+      if (props.route.params?.status === "success") {
+        setIndexTab(3);
+        getData(3);
+      }
+      if (props.route.params?.status === "delivering") {
+        setIndexTab(2);
+        getData(2);
+      }
+      if (props.route.params?.status === "cholayhang") {
+        setIndexTab(1);
+        getData(1);
+      }
+      if (props.route.params?.status === "Rate") {
+        setIndexTab(3);
+        getData(3);
+      }
+      if (!props.route.params?.status) {
+        getData();
+      }
+    });
+    return ubsubcribe;
+  }, []);
+
   const getData = async (id = indexTab) => {
     setrefreshing(true);
     dispatch(setIsLoading(true));
@@ -56,7 +79,6 @@ const OrderScreen = (props) => {
       // dispatch(setListOrder(data.data));
     }
   };
-
   const renderEmpty = () => {
     return (
       <Block flex justifyCenter>
@@ -74,7 +96,6 @@ const OrderScreen = (props) => {
   const renderOrder = (item, index) => {
     return <OrderProduct item={item} index={index} key={index} />;
   };
-
 
   const isCloseToBottom = ({
     layoutMeasurement,

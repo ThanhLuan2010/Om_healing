@@ -12,10 +12,8 @@ const AlertModal = (props) => {
       <Block
         paddingHorizontal={15}
         paddingVertical={17}
-        radius={19}
+        radius={10}
         width={width * 0.8}
-        borderWidth={1}
-        borderColor={"#E99200"}
         backgroundColor={theme.colors.white}
       >
         <Text size={17} marginBottom={17} center fontType="bold">
@@ -53,7 +51,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#19AE67",
     alignSelf: "center",
     paddingHorizontal: 18,
-    paddingVertical: 5,
+    paddingVertical: 7,
     borderRadius: 5,
     width: width / 4,
     alignItems: "center",
@@ -62,7 +60,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F04444",
     alignSelf: "center",
     paddingHorizontal: 18,
-    paddingVertical: 5,
+    paddingVertical: 7,
     borderRadius: 5,
     width: width / 4,
     alignItems: "center",

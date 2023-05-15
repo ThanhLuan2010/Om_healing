@@ -17,6 +17,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import { showMessage } from "react-native-flash-message";
 
 const ProductDetail = ({ navigation, route }) => {
   const { item, index } = route.params;
@@ -25,7 +26,6 @@ const ProductDetail = ({ navigation, route }) => {
   const [count, setcount] = useState(1);
   const { userInfo } = useSelector(userSelect);
   const scrollRef = useRef();
-  const dispatch = useDispatch();
   useEffect(async () => {
     setloading(true);
     const response = await baseQuery({
@@ -56,22 +56,18 @@ const ProductDetail = ({ navigation, route }) => {
   };
   const onBuy = async (product) => {
     if (!userInfo?.user_address || userInfo?.user_address === "") {
-      showAlert(
-        "Thông báo",
-        "Bạn cần cập nhật thông tin địa chỉ trước khi đặt hàng",
-        "Xác nhận",
-        "",
-        () => goBack()
-      );
+      showMessage({
+        message: "Thông báo",
+        type: "warning",
+        description: "Bạn cần cập nhật thông tin địa chỉ trước khi đặt hàng",
+      });
     }
     if (!userInfo?.user_name || userInfo?.user_name === "") {
-      showAlert(
-        "Thông báo",
-        "Bạn cần cập nhật tên trước khi đặt hàng",
-        "Xác nhận",
-        "",
-        () => goBack()
-      );
+      showMessage({
+        message: "Thông báo",
+        type: "warning",
+        description: "Bạn cần cập nhật tên trước khi đặt hàng",
+      });
     }
     if (userInfo?.user_address && userInfo?.user_name) {
       setLoading(true);
@@ -89,24 +85,22 @@ const ProductDetail = ({ navigation, route }) => {
       const { data, message, status } = response;
       if (status) {
         navigate("OrderScreen");
-        showAlert(
-          "Thành Công",
-          message || "Mua hàng thành công",
-          "Chấp nhận",
-          "",
-          () => goBack()
-        );
+
+        showMessage({
+          message: "Thành Công",
+          type: "success",
+          description: message || "Mua hàng thành công",
+        });
       } else {
-        showAlert(
-          "Thất bại",
-          message || "Mua hàng thất bại",
-          "Chấp nhận",
-          "",
-          () => goBack()
-        );
+        showMessage({
+          message: "Thất bại",
+          type: "warning",
+          description: message || "Mua hàng thất bại",
+        });
       }
     }
   };
+
   return (
     <Block flex backgroundColor={theme.colors.white}>
       <Header style={styles.header} canGoBack title={"Sản phẩm"} />
@@ -168,6 +162,7 @@ const ProductDetail = ({ navigation, route }) => {
                       value={count.toString()}
                       onChangeText={(txt) => setcount(txt)}
                       keyboardType="numeric"
+                      style={{ padding: 0 }}
                     />
                   </Block>
 

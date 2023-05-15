@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   icQuize: {
     width: 26,
     height: 31,
-    resizeMode: "center",
+    resizeMode: "contain",
   },
   icUser: {
     width: getSize.m(38),

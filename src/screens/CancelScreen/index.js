@@ -10,6 +10,7 @@ import { useDispatch } from "react-redux";
 import { setIsLoading } from "@store/slices/common";
 import { showAlert } from "@utils/navigator";
 import { goBack } from "@navigation/RootNavigation";
+import { showMessage } from "react-native-flash-message";
 
 const CancelScreen = ({ route }) => {
   const { item } = route.params;
@@ -26,29 +27,21 @@ const CancelScreen = ({ route }) => {
       },
     });
     dispatch(setIsLoading(false));
-    console.log("======response=====", response);
     const { status, message } = response;
     if (status) {
-      showAlert(
-        "Thành công",
-        message || "Huỷ đơn hàng thành công",
-        "Xác nhận",
-        "",
-        () => {
-          goBack();
-          goBack();
-        }
-      );
+      goBack();
+      goBack();
+      showMessage({
+        message: "Thành công",
+        type: "success",
+        description: message || "Huỷ đơn hàng thành công",
+      });
     } else {
-      showAlert(
-        "Thất bại",
-        message || "Huỷ đơn hàng thất bại",
-        "Xác nhận",
-        "",
-        () => {
-          goBack();
-        }
-      );
+      showMessage({
+        message: "Thất bại",
+        type: "warning",
+        description: message || "Huỷ đơn hàng thất bại",
+      });
     }
   };
   return (
@@ -64,6 +57,7 @@ const CancelScreen = ({ route }) => {
         style={styles.bg_order}
         paddingHorizontal={12}
         shadow
+        paddingVertical={10}
       >
         <Image
           source={{ uri: item?.product_image }}

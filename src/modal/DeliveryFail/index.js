@@ -33,6 +33,7 @@ const DeliveryFail = ({ route }) => {
     const { data, message, status } = response;
     if (status) {
       goBack();
+      goBack()
       // navigate("OrderScreen");
       showAlert(
         "Thành Công",
@@ -55,7 +56,6 @@ const DeliveryFail = ({ route }) => {
   };
   return (
     <Pressable onPress={() => goBack()} style={styles.container}>
-      {/* <KeyboardWrap> */}
       <KeyboardAvoidingView behavior="padding">
         <Pressable
           onPress={() => {
@@ -100,8 +100,6 @@ const DeliveryFail = ({ route }) => {
           </Block>
         </Pressable>
       </KeyboardAvoidingView>
-
-      {/* </KeyboardWrap> */}
     </Pressable>
   );
 };

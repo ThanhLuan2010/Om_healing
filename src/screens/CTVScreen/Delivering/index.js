@@ -17,6 +17,7 @@ import { formatPrice } from "@utils/helper";
 import { theme } from "@theme";
 import { getSize } from "@utils/responsive";
 import { images } from "@assets";
+import { useNavigation } from "@react-navigation/native";
 
 const Delyvering = () => {
   const [data, setdata] = useState([]);
@@ -25,9 +26,17 @@ const Delyvering = () => {
   const [canLoadMore, setcanLoadMore] = useState(true);
   const [isLoadmore, setisLoadmore] = useState(false);
   const [page, setpage] = useState(1);
+  const navigation = useNavigation();
+  useEffect(() => {
+    const ubsubcribe = navigation.addListener("focus", () => {
+      getData();
+    });
+    return ubsubcribe;
+  }, []);
   useEffect(() => {
     getData();
   }, []);
+
   const getData = async (_page = page, search = searchQuery) => {
     setLoading(true);
     const response = await baseQuery({

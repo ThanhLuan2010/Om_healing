@@ -8,6 +8,7 @@ import user from "./slices/user";
 import product from "./slices/products";
 import order from './slices/order'
 import search from './slices/search'
+import codePush from './slices/codePush'
 
 const reducers = combineReducers({
   user,
@@ -15,7 +16,8 @@ const reducers = combineReducers({
   book,
   product,
   order,
-  search
+  search,
+  codePush
 });
 
 const persistConfig = {

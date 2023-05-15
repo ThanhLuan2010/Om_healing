@@ -38,7 +38,7 @@ const OrderProduct = ({ item }) => {
       case -1:
         return "Chi tiết đơn huỷ";
       case -2:
-        return "Chi tiết đơn hàng";
+        return "Mua lại";
       default:
         break;
     }
@@ -66,7 +66,7 @@ const OrderProduct = ({ item }) => {
         navigate("CancelDetail", { item });
         break;
       case -2:
-        navigate("VoteOrderDetail", { item });
+        navigate("ProductDetail", { item });
         break;
       default:
     }
@@ -157,7 +157,7 @@ const OrderProduct = ({ item }) => {
           </Text>
           <GradientButton
             onPress={onPressAction}
-            title={renderButtonTitle()}
+            title={item?.order_comment === 0 ? renderButtonTitle() : "Mua lại"}
             style={styles.GradientButton}
             styleTitle={styles.styleTitle}
           />

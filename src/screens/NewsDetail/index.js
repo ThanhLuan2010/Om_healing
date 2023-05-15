@@ -7,6 +7,7 @@ import { userSelect } from "@store/slices/user";
 import { theme } from "@theme";
 import { showAlert } from "@utils/navigator";
 import { getSize } from "@utils/responsive";
+import { DOMAIN } from "../../constants";
 import moment from "moment";
 import React, { useEffect, useState } from "react";
 import {
@@ -43,6 +44,7 @@ const NewsDetail = ({ route }) => {
   }, []);
 
   const renderComment = (item, index) => {
+    console.log("===item.user====", item.user);
     return (
       <Block
         borderTopWidth={index === 0 ? 0 : 0.5}
@@ -56,7 +58,11 @@ const NewsDetail = ({ route }) => {
         <Image
           source={
             item?.user?.user_image
-              ? { uri: item?.user?.user_image }
+              ? {
+                  uri: item?.user?.user_image?.includes("https://")
+                    ? item?.user?.user_image
+                    : DOMAIN + item?.user?.user_image,
+                }
               : images.ic_account
           }
           style={styles.avatarCmt}
@@ -143,7 +149,10 @@ const NewsDetail = ({ route }) => {
 
         <Image
           source={{
-            uri: item?.article_image,
+            // uri: item?.article_image,
+            uri: item?.article_image?.includes("https://")
+              ? item?.article_image
+              : DOMAIN + item?.article_image,
           }}
           style={styles.newsImg}
         />

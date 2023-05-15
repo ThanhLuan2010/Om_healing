@@ -3,24 +3,24 @@ import { Block, Header, Text } from "@components";
 import database from "@react-native-firebase/database";
 import { userSelect } from "@store/slices/user";
 import { theme } from "@theme";
+import { setLoading } from "@utils/navigator";
 import { getSize, width } from "@utils/responsive";
 import moment from "moment";
 import React, { useCallback, useEffect, useState } from "react";
 import { Image, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import { GiftedChat } from "react-native-gifted-chat";
 import uuid from "react-native-uuid";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-let dataMess = [];
 const ChatScreen = (props) => {
   const [loading, setloading] = useState(false);
-  const dispatch = useDispatch();
   const [messages, setMessages] = useState([]);
   const [inputValue, setinputValue] = useState("");
   const { userInfo } = useSelector(userSelect);
   const messagesRef = database().ref("chat/" + userInfo?.user_id);
 
   useEffect(() => {
+    setLoading(true);
     const messagesQuery = messagesRef.orderByChild("timestamp");
     messagesQuery.on("value", (snapshot) => {
       const _data = [];
@@ -31,6 +31,7 @@ const ChatScreen = (props) => {
         });
       });
       setMessages(_data?.reverse());
+      setLoading(false);
     });
     return () => {
       messagesQuery.off("value");

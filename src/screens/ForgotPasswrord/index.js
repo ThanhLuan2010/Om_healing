@@ -1,14 +1,16 @@
 import { icons, images } from "@assets";
 import { Block, GradientButton, Text } from "@components";
 import { theme } from "@theme";
-import React from "react";
+import React, { useState } from "react";
 import { Image, Pressable, TextInput } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import styles from "./styles";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import auth from "@react-native-firebase/auth";
 
 const ForgotPassword = (props) => {
   const { top } = useSafeAreaInsets();
+  const [phone, setphone] = useState("");
   return (
     <LinearGradient
       colors={theme.colors.backgroundColor}
@@ -47,10 +49,24 @@ const ForgotPassword = (props) => {
           backgroundColor={theme.colors.gray2}
           marginHorizontal={8}
         />
-        <TextInput keyboardType="numeric" style={styles.input} maxLength={10} />
+        <TextInput
+          value={phone}
+          onChangeText={(txt) => setphone(txt)}
+          keyboardType="numeric"
+          style={styles.input}
+          maxLength={10}
+        />
       </Block>
       <GradientButton
-        onPress={() => props.navigation.navigate("OtpScreen")}
+        onPress={async () => {
+          const fullPhone = `+84${phone?.replace("0", "")}`;
+          const confirmation = await auth().signInWithPhoneNumber(fullPhone);
+          props.navigation.navigate("OtpScreen", {
+            confirmation: confirmation,
+            type: "FOGOT",
+            phone: phone,
+          });
+        }}
         style={styles.button}
         title="Xác nhận"
         styleTitle={styles.styleTitle}

@@ -10,6 +10,7 @@ import { Image, Pressable, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import styles from "./styles";
+import { navigate } from "@navigation/RootNavigation";
 
 const Header = (props) => {
   return <HeaderCommon {...props} />;
@@ -80,7 +81,7 @@ const HeaderCommon = ({
         {rightComponent ? (
           rightComponent
         ) : (
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>navigate('ChatScreen')}>
             <Image source={images.ic_quize} style={styles.icQuize} />
           </TouchableOpacity>
         )}

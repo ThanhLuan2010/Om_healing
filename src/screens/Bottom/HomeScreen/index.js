@@ -2,9 +2,11 @@ import { baseQuery } from "@api/baseQuery";
 import { images } from "@assets";
 import { Block, GradientButton, HeaderHome, Text, TopNav } from "@components";
 import SearchBar from "@components/SearchBar";
-import { setUserInfo, setisFromHome } from "@store/slices/user";
+import { goBack, navigate } from "@navigation/RootNavigation";
+import { setUserInfo } from "@store/slices/user";
 import { theme } from "@theme";
 import { formatPrice } from "@utils/helper";
+import { showAlert } from "@utils/navigator";
 import { getSize, width } from "@utils/responsive";
 import React, { useEffect, useRef, useState } from "react";
 import { Image, ScrollView, TouchableOpacity } from "react-native";
@@ -13,11 +15,6 @@ import { useDispatch } from "react-redux";
 import { DOMAIN } from "../../../constants";
 import CarouselComponent from "./Carousel";
 import styles from "./styles";
-import { goBack, navigate } from "@navigation/RootNavigation";
-import { showAlert } from "@utils/navigator";
-import messaging from "@react-native-firebase/messaging";
-import { dispatch } from "@store/configStore";
-import { setListProduct } from "@store/slices/products";
 
 const menuData = [
   {

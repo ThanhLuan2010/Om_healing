@@ -7,6 +7,7 @@ import { theme } from "@theme";
 import { images } from "@assets";
 import { formatPrice } from "@utils/helper";
 import { navigate } from "@navigation/RootNavigation";
+import { DOMAIN } from "../../constants";
 
 const Product = ({ item, index, onPress = null }) => {
   return (
@@ -28,7 +29,7 @@ const Product = ({ item, index, onPress = null }) => {
         <Block>
           <Image
             source={{
-              uri: item?.product_image,
+              uri:item?.product_image?.includes('https://')? item?.product_image: DOMAIN+item?.product_image,
             }}
             style={styles.imgProduct}
           />

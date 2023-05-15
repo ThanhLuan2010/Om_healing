@@ -1,12 +1,12 @@
 import { icons, images } from "@assets";
 import { Block, CheckBox, GradientButton, Text } from "@components";
 import { goBack, navigate } from "@navigation/RootNavigation";
+import messaging from "@react-native-firebase/messaging";
 import { theme } from "@theme";
 import { showAlert } from "@utils/navigator";
 import { width } from "@utils/responsive";
 import React, { useEffect, useState } from "react";
 import {
-  Alert,
   Image,
   KeyboardAvoidingView,
   Pressable,
@@ -15,6 +15,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import { showMessage } from "react-native-flash-message";
 import LinearGradient from "react-native-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +29,6 @@ import {
   setUserInfo,
   userSelect,
 } from "../../store/slices/user";
-import messaging from "@react-native-firebase/messaging";
 
 export default function LoginScreen({ navigation }) {
   useEffect(() => {
@@ -79,21 +79,17 @@ export default function LoginScreen({ navigation }) {
         getInfo();
         dispatch(setIsLoggedIn(true));
         // dispatch(setUserInfo(data));
-        showAlert(
-          "Thông báo",
-          message || "Đăng nhập thành công",
-          "Chấp nhận",
-          "",
-          () => goBack()
-        );
+        showMessage({
+          message: "Thành công",
+          type: "success",
+          description: message || "Đăng nhập thành công",
+        });
       } else {
-        showAlert(
-          "Thông báo",
-          message || "Đăng nhập thất bại",
-          "Chấp nhận",
-          "",
-          () => goBack()
-        );
+        showMessage({
+          message: "Thất bại",
+          type: "warning",
+          description: message || "Đăng nhập thất bạị",
+        });
       }
     } catch (error) {
       showAlert(
