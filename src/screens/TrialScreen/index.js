@@ -78,7 +78,7 @@ const TrialScreen = () => {
     );
   };
   return (
-    <ImageBackground source={images.bg_fake} style={styles.bg_container}>
+    <ImageBackground source={images.bg_container} style={styles.bg_container}>
       <Block height={100} top={20}>
         <Image source={images.logo_text} style={styles.logo_text} />
       </Block>

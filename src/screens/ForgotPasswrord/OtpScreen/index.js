@@ -126,7 +126,7 @@ const OtpScreen = (props) => {
     }
   };
   return (
-    <ImageBackground source={images.bg_fake} style={{ flex: 1 }}>
+    <ImageBackground source={images.bg_container} style={styles.bg_container}>
       <Block paddingBottom={50} />
       <Block marginHorizontal={20}>
         <Text
@@ -277,9 +277,8 @@ const OtpScreen = (props) => {
 export default OtpScreen;
 
 const styles = StyleSheet.create({
-  backgroundColor: {
+  bg_container: {
     flex: 1,
-    justifyContent: "center",
   },
   inputs: {
     borderRadius: 2,
