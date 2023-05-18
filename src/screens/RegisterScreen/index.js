@@ -54,7 +54,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <ImageBackground
       source={images.bg_container}
-      style={{ flex: 1 }}
+      style={styles.bg_container}
       resizeMode="cover"
     >
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -169,7 +169,7 @@ export default function LoginScreen({ navigation }) {
 
             <Block marginTop={20} marginBottom={40} justifyCenter>
               <GradientButton
-                colors={["#521717FA", "#8F1515"]}
+                colors={theme.colors.gradient_red}
                 title="Đăng Ký"
                 style={styles.button}
                 styleTitle={styles.titleButton}
@@ -195,12 +195,11 @@ export default function LoginScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  backgroundColor: {
+  bg_container: {
     flex: 1,
   },
   logo: {
     width: width - 46 * 2,
-    // height: 200,
     resizeMode: "contain",
     marginTop: 170,
     marginBottom: 55,
