@@ -1,5 +1,5 @@
 import { icons, images } from "@assets";
-import { Block, GradientButton, Text } from "@components";
+import { Block, Button, GradientButton, Text } from "@components";
 import { goBack, navigate } from "@navigation/RootNavigation";
 import auth from "@react-native-firebase/auth";
 import { theme } from "@theme";
@@ -8,6 +8,7 @@ import { width } from "@utils/responsive";
 import React, { useEffect, useState } from "react";
 import {
   Image,
+  ImageBackground,
   KeyboardAvoidingView,
   Pressable,
   ScrollView,
@@ -51,9 +52,10 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <LinearGradient
-      style={[styles.backgroundColor, { paddingTop: top }]}
-      colors={theme.colors.backgroundColor}
+    <ImageBackground
+      source={images.bg_container}
+      style={styles.bg_container}
+      resizeMode="cover"
     >
       <ScrollView showsVerticalScrollIndicator={false}>
         <KeyboardAvoidingView behavior="padding">
@@ -63,12 +65,11 @@ export default function LoginScreen({ navigation }) {
             justifyCenter
             alignCenter
           >
-            <Image source={images.logo} style={styles.logo} />
+            <Image source={images.logo_text} style={styles.logo} />
             <Text
-              marginTop={32}
               size={24}
               fontType={"bold"}
-              color={theme.colors.white}
+              color={theme.colors.color_register}
             >
               Đăng ký
             </Text>
@@ -78,7 +79,7 @@ export default function LoginScreen({ navigation }) {
               <Block marginBottom={30}>
                 <Block row alignCenter marginBottom={20}>
                   <Image source={icons.ic_phone} style={styles.ic_phone} />
-                  <Text size={18} color={theme.colors.white} marginLeft={14}>
+                  <Text size={18} color={theme.colors.black} marginLeft={14}>
                     Số điện thoại
                   </Text>
                 </Block>
@@ -86,15 +87,15 @@ export default function LoginScreen({ navigation }) {
                   alignCenter
                   row
                   borderBottomWidth={1}
-                  borderColor={theme.colors.gray2}
+                  borderColor={theme.colors.black}
                   paddingBottom={10}
                 >
-                  <Text color={theme.colors.gray2}>(84+)</Text>
+                  <Text color={theme.colors.black}>(84+)</Text>
                   <Block
                     marginHorizontal={8}
                     height={24}
                     width={1}
-                    backgroundColor={theme.colors.gray2}
+                    backgroundColor={theme.colors.black}
                   />
                   <TextInput
                     value={phone}
@@ -108,7 +109,7 @@ export default function LoginScreen({ navigation }) {
               <Block marginBottom={30}>
                 <Block row alignCenter marginBottom={20}>
                   <Image source={icons.ic_key} style={styles.ic_phone} />
-                  <Text marginLeft={14} size={18} color={theme.colors.white}>
+                  <Text marginLeft={14} size={18} color={theme.colors.black}>
                     Mật khẩu
                   </Text>
                 </Block>
@@ -116,7 +117,7 @@ export default function LoginScreen({ navigation }) {
                   alignCenter
                   row
                   borderBottomWidth={1}
-                  borderColor={theme.colors.gray2}
+                  borderColor={theme.colors.black}
                 >
                   <TextInput
                     secureTextEntry={security}
@@ -126,6 +127,7 @@ export default function LoginScreen({ navigation }) {
                   />
                   <TouchableOpacity onPress={() => setSecurity(!security)}>
                     <Image
+                      style={styles.ic_eye}
                       source={security ? icons.ic_closeEye : icons.ic_openEye}
                     />
                   </TouchableOpacity>
@@ -135,7 +137,7 @@ export default function LoginScreen({ navigation }) {
               <Block marginBottom={30}>
                 <Block row alignCenter marginBottom={20}>
                   <Image source={icons.ic_key} style={styles.ic_phone} />
-                  <Text marginLeft={14} size={18} color={theme.colors.white}>
+                  <Text marginLeft={14} size={18} color={theme.colors.black}>
                     Nhập lại mật khẩu
                   </Text>
                 </Block>
@@ -143,7 +145,7 @@ export default function LoginScreen({ navigation }) {
                   alignCenter
                   row
                   borderBottomWidth={1}
-                  borderColor={theme.colors.gray2}
+                  borderColor={theme.colors.black}
                 >
                   <TextInput
                     secureTextEntry={securityRePass}
@@ -155,6 +157,7 @@ export default function LoginScreen({ navigation }) {
                     onPress={() => setSecurityRepass(!securityRePass)}
                   >
                     <Image
+                      style={styles.ic_eye}
                       source={
                         securityRePass ? icons.ic_closeEye : icons.ic_openEye
                       }
@@ -166,6 +169,7 @@ export default function LoginScreen({ navigation }) {
 
             <Block marginTop={20} marginBottom={40} justifyCenter>
               <GradientButton
+                colors={theme.colors.gradient_red}
                 title="Đăng Ký"
                 style={styles.button}
                 styleTitle={styles.titleButton}
@@ -173,7 +177,12 @@ export default function LoginScreen({ navigation }) {
                 disable={phone && password && rePassword ? false : true}
               />
               <Pressable style={styles.btnRegister} onPress={() => goBack()}>
-                <Text size={18} color={theme.colors.white} center>
+                <Text
+                  fontFamily={theme.fonts.fontFamily.SourceSans3Bold}
+                  size={18}
+                  color={theme.colors.color_register}
+                  center
+                >
                   Quay lại
                 </Text>
               </Pressable>
@@ -184,29 +193,31 @@ export default function LoginScreen({ navigation }) {
           </Block>
         </KeyboardAvoidingView>
       </ScrollView>
-    </LinearGradient>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  backgroundColor: {
+  bg_container: {
     flex: 1,
   },
   logo: {
     width: width - 46 * 2,
-    height: 200,
     resizeMode: "contain",
+    marginTop: 170,
+    marginBottom: 55,
   },
   ic_phone: {
-    width: 19,
-    height: 19,
+    width: 23,
+    height: 23,
     resizeMode: "contain",
+    tintColor: theme.colors.black,
   },
   inputNumber: {
     flex: 1,
     fontSize: 18,
-    color: theme.colors.white,
-    fontFamily: theme.fonts.fontFamily.SourceSans3Regular,
+    color: theme.colors.black,
+    fontFamily: theme.fonts.fontFamily.SourceSans3Bold,
     paddingVertical: 0,
   },
   checkBox: {
@@ -227,5 +238,11 @@ const styles = StyleSheet.create({
   },
   titleButton: {
     fontSize: 18,
+  },
+  ic_eye: {
+    width: 20,
+    height: 20,
+    resizeMode: "contain",
+    tintColor: theme.colors.black,
   },
 });

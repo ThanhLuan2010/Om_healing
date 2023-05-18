@@ -14,7 +14,6 @@ export default function GrafientButton({
   containerStyle,
   styleTitle,
   icon,
-  gradient
 }) {
   return (
     <TouchableOpacity
