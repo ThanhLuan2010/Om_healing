@@ -177,6 +177,9 @@ export default function LoginScreen({ navigation }) {
                   Quay lại
                 </Text>
               </Pressable>
+              <TouchableOpacity style={{backgroundColor:"red"}} onPress={()=>navigate("OtpScreen")}>
+                <Text>sssssssss</Text>
+              </TouchableOpacity>
             </Block>
           </Block>
         </KeyboardAvoidingView>

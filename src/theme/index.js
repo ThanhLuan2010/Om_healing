@@ -51,6 +51,10 @@ export const theme = {
     greenBlur: "#C3FFD133",
     greenBold: "#10A31E",
     gray_3: "#747474",
+    color_register: "#800000",
+    color_time: "#FF0000",
+    gradient_red: ["#521717FA", "#8F1515"],
+    gradient_opYellow: ["#FFF6DF", "#FFEAC2"],
   },
 
   fonts: {

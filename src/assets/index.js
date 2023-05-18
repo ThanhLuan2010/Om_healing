@@ -66,5 +66,9 @@ const images = {
   ic_check: require("./images/ic_check.png"),
   loadingBg: require("./images/loadingBg.png"),
   ic_close: require("./images/ic_close.png"),
+  bg_fake: require("./images/bg_fake.png"),
+  logo_text: require("./images/logo_text.png"),
+  ic_google: require("./images/ic_google.png"),
+  ic_facebook: require("./images/ic_facebook.png"),
 };
 export { icons, lottie, images };

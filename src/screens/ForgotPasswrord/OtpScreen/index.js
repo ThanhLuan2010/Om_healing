@@ -1,11 +1,17 @@
 import { baseQuery } from "@api/baseQuery";
+import { images } from "@assets";
 import { Block, Text } from "@components";
 import { navigate } from "@navigation/RootNavigation";
 import { theme } from "@theme";
 import { setLoading } from "@utils/navigator";
 import { width } from "@utils/responsive";
 import React, { useRef, useState } from "react";
-import { Pressable, StyleSheet, TextInput } from "react-native";
+import {
+  ImageBackground,
+  Pressable,
+  StyleSheet,
+  TextInput,
+} from "react-native";
 import { showMessage } from "react-native-flash-message";
 import LinearGradient from "react-native-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -120,154 +126,151 @@ const OtpScreen = (props) => {
     }
   };
   return (
-    <>
-      <LinearGradient
-        colors={theme.colors.backgroundColor}
-        style={[styles.backgroundColor, { paddingTop: top }]}
-      >
-        <Block paddingBottom={50} />
-        <Block marginHorizontal={20}>
-          <Text size={18} color={theme.colors.white} customFont="medium">
-            Vui lòng nhập mã OTP xác nhận vừa được gửi vào số điện thoại bạn đã
-            đăng ký.
-          </Text>
+    <ImageBackground source={images.bg_fake} style={{ flex: 1 }}>
+      <Block paddingBottom={50} />
+      <Block marginHorizontal={20}>
+        <Text
+          size={18}
+          color={theme.colors.black}
+          fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
+        >
+          Vui lòng nhập mã OTP xác nhận vừa được gửi vào số điện thoại bạn đã
+          đăng ký.
+        </Text>
 
-          <Block row alignCenter space={"between"} marginVertical={24}>
-            <Block style={styles.inputOtp}>
-              <TextInput
-                style={[styles.inputs, isFocused.number_1]}
-                onFocus={() => handleInputFocus("number_1")}
-                onBlur={() => handleInputBlur("number_1")}
-                keyboardType="number-pad"
-                maxLength={1}
-                ref={firstInput}
-                onChangeText={(text) => {
-                  setInput_1(text);
-                  text
-                    ? secondInput.current.focus()
-                    : firstInput.current.focus();
-                  // secondInput.current.focus();
-                }}
-              />
-            </Block>
-            <Block style={styles.inputOtp}>
-              <TextInput
-                style={[styles.inputs, isFocused.number_2]}
-                onFocus={() => handleInputFocus("number_2")}
-                onBlur={() => handleInputBlur("number_2")}
-                keyboardType="number-pad"
-                maxLength={1}
-                ref={secondInput}
-                onChangeText={(text) => {
-                  setInput_2(text);
-                  text
-                    ? thirdInput.current.focus()
-                    : firstInput.current.focus();
-                }}
-              />
-            </Block>
-
-            <Block style={styles.inputOtp}>
-              <TextInput
-                style={[styles.inputs, isFocused.number_3]}
-                onFocus={() => handleInputFocus("number_3")}
-                onBlur={() => handleInputBlur("number_3")}
-                keyboardType="number-pad"
-                maxLength={1}
-                ref={thirdInput}
-                onChangeText={(text) => {
-                  setInput_3(text);
-                  text
-                    ? fourthInput.current.focus()
-                    : secondInput.current.focus();
-                }}
-              />
-            </Block>
-            <Block style={styles.inputOtp}>
-              <TextInput
-                style={[styles.inputs, isFocused.number_4]}
-                onFocus={() => handleInputFocus("number_4")}
-                onBlur={() => handleInputBlur("number_4")}
-                keyboardType="number-pad"
-                maxLength={1}
-                ref={fourthInput}
-                onChangeText={(text) => {
-                  setInput_4(text);
-                  text
-                    ? fifthInput.current.focus()
-                    : thirdInput.current.focus();
-                }}
-              />
-            </Block>
-            <Block style={styles.inputOtp}>
-              <TextInput
-                style={[styles.inputs, isFocused.number_5]}
-                onFocus={() => handleInputFocus("number_4")}
-                onBlur={() => handleInputBlur("number_4")}
-                keyboardType="number-pad"
-                maxLength={1}
-                ref={fifthInput}
-                onChangeText={(text) => {
-                  setInput_5(text);
-                  text
-                    ? sixthInput.current.focus()
-                    : fourthInput.current.focus();
-                }}
-              />
-            </Block>
-            <Block style={styles.inputOtp}>
-              <TextInput
-                style={[styles.inputs, isFocused.number_6]}
-                onFocus={() => handleInputFocus("number_4")}
-                onBlur={() => handleInputBlur("number_4")}
-                keyboardType="number-pad"
-                maxLength={1}
-                ref={sixthInput}
-                onChangeText={(text) => {
-                  setInput_6(text);
-                  text
-                    ? // ? props.navigation.navigate("NewPassScreen")
-                      confirmOTP(
-                        `${input_1}${input_2}${input_3}${input_4}${input_5}${text}`
-                      )
-                    : fifthInput.current.focus();
-                }}
-              />
-            </Block>
+        <Block row alignCenter space={"between"} marginVertical={24}>
+          <Block style={styles.inputOtp}>
+            <TextInput
+              style={[styles.inputs, isFocused.number_1]}
+              onFocus={() => handleInputFocus("number_1")}
+              onBlur={() => handleInputBlur("number_1")}
+              keyboardType="number-pad"
+              maxLength={1}
+              ref={firstInput}
+              onChangeText={(text) => {
+                setInput_1(text);
+                text ? secondInput.current.focus() : firstInput.current.focus();
+                // secondInput.current.focus();
+              }}
+            />
           </Block>
-          {time > 0 ? (
-            <Text color={theme.colors.red} center marginBottom={33} size={16}>
-              Thời gian còn lại:
-              {time} giây
-            </Text>
-          ) : (
-            <Pressable onPress={resend}>
-              <Text
-                style={styles.underLine}
-                size={18}
-                color={theme.colors.white}
-                center
-              >
-                Gửi lại OTP
-              </Text>
-            </Pressable>
-          )}
-          <Pressable onPress={() => props.navigation.goBack()}>
+          <Block style={styles.inputOtp}>
+            <TextInput
+              style={[styles.inputs, isFocused.number_2]}
+              onFocus={() => handleInputFocus("number_2")}
+              onBlur={() => handleInputBlur("number_2")}
+              keyboardType="number-pad"
+              maxLength={1}
+              ref={secondInput}
+              onChangeText={(text) => {
+                setInput_2(text);
+                text ? thirdInput.current.focus() : firstInput.current.focus();
+              }}
+            />
+          </Block>
+
+          <Block style={styles.inputOtp}>
+            <TextInput
+              style={[styles.inputs, isFocused.number_3]}
+              onFocus={() => handleInputFocus("number_3")}
+              onBlur={() => handleInputBlur("number_3")}
+              keyboardType="number-pad"
+              maxLength={1}
+              ref={thirdInput}
+              onChangeText={(text) => {
+                setInput_3(text);
+                text
+                  ? fourthInput.current.focus()
+                  : secondInput.current.focus();
+              }}
+            />
+          </Block>
+          <Block style={styles.inputOtp}>
+            <TextInput
+              style={[styles.inputs, isFocused.number_4]}
+              onFocus={() => handleInputFocus("number_4")}
+              onBlur={() => handleInputBlur("number_4")}
+              keyboardType="number-pad"
+              maxLength={1}
+              ref={fourthInput}
+              onChangeText={(text) => {
+                setInput_4(text);
+                text ? fifthInput.current.focus() : thirdInput.current.focus();
+              }}
+            />
+          </Block>
+          <Block style={styles.inputOtp}>
+            <TextInput
+              style={[styles.inputs, isFocused.number_5]}
+              onFocus={() => handleInputFocus("number_4")}
+              onBlur={() => handleInputBlur("number_4")}
+              keyboardType="number-pad"
+              maxLength={1}
+              ref={fifthInput}
+              onChangeText={(text) => {
+                setInput_5(text);
+                text ? sixthInput.current.focus() : fourthInput.current.focus();
+              }}
+            />
+          </Block>
+          <Block style={styles.inputOtp}>
+            <TextInput
+              style={[styles.inputs, isFocused.number_6]}
+              onFocus={() => handleInputFocus("number_4")}
+              onBlur={() => handleInputBlur("number_4")}
+              keyboardType="number-pad"
+              maxLength={1}
+              ref={sixthInput}
+              onChangeText={(text) => {
+                setInput_6(text);
+                text
+                  ? // ? props.navigation.navigate("NewPassScreen")
+                    confirmOTP(
+                      `${input_1}${input_2}${input_3}${input_4}${input_5}${text}`
+                    )
+                  : fifthInput.current.focus();
+              }}
+            />
+          </Block>
+        </Block>
+        {time > 0 ? (
+          <Text
+            fontFamily={theme.fonts.fontFamily.SourceSans3Regular}
+            color={theme.colors.color_time}
+            center
+            marginBottom={33}
+            size={16}
+          >
+            Thời gian còn lại:
+            {time} giây
+          </Text>
+        ) : (
+          <Pressable onPress={resend}>
             <Text
-              color={theme.colors.white}
+              style={styles.underLine}
               size={18}
-              fontType={"bold"}
+              color={theme.colors.white}
               center
-              marginTop={30}
             >
-              Quay Lại
+              Gửi lại OTP
             </Text>
           </Pressable>
-        </Block>
+        )}
+        <Pressable onPress={() => props.navigation.goBack()}>
+          <Text
+            color={theme.colors.color_register}
+            size={18}
+            fontType={"bold"}
+            center
+            marginTop={30}
+          >
+            Quay Lại
+          </Text>
+        </Pressable>
+      </Block>
 
-        <Block flex={4} />
-      </LinearGradient>
-    </>
+      <Block flex={4} />
+    </ImageBackground>
   );
 };
 
@@ -281,8 +284,6 @@ const styles = StyleSheet.create({
   inputs: {
     borderRadius: 2,
     borderColor: theme.colors.gray2,
-    width: (width - 40) / 6.5,
-    height: (width - 40) / 6.5,
     textAlign: "center",
     color: theme.colors.black,
     fontWeight: "bold",
@@ -298,7 +299,6 @@ const styles = StyleSheet.create({
   roundedTextInput: {
     borderRadius: 2,
     backgroundColor: theme.colors.white,
-    // borderWidth: 4,
   },
   underLine: {
     textDecorationLine: "underline",
@@ -306,5 +306,14 @@ const styles = StyleSheet.create({
   inputOtp: {
     width: (width - 40) / 8,
     height: (width - 40) / 8,
+    backgroundColor: "#2E9298",
+    shadowColor: "#000000",
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowRadius: 5,
+    shadowOpacity: 1.0,
+    elevation: 10,
   },
 });
