@@ -30,7 +30,6 @@ export default function GrafientButton({
         <Block gradient>
           <Block
             row
-            colors
             alignCenter
             paddingHorizontal={12}
             paddingTop={10}
