@@ -14,7 +14,6 @@ export default function GrafientButton({
   containerStyle,
   styleTitle,
   icon,
- 
 }) {
   return (
     <TouchableOpacity
@@ -24,27 +23,28 @@ export default function GrafientButton({
     >
       <LinearGradient
         style={style}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
+        start={{ x: 1, y: 0 }}
+        end={{ x: 1, y: 1 }}
         colors={disable ? ["gray", "gray"] : colors}
       >
-        <Block
-          row
-          colors
-          alignCenter
-          paddingHorizontal={12}
-          paddingTop={10}
-          paddingVertical={12}
-        >
-          {icon && icon}
-          <Text
-            style={styleTitle}
-            color={theme.colors.white}
-            fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
-            numberOfLines={1}
+        <Block gradient>
+          <Block
+            row
+            alignCenter
+            paddingHorizontal={12}
+            paddingTop={10}
+            paddingVertical={12}
           >
-            {title}
-          </Text>
+            {icon && icon}
+            <Text
+              style={styleTitle}
+              color={theme.colors.white}
+              fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
+              numberOfLines={1}
+            >
+              {title}
+            </Text>
+          </Block>
         </Block>
       </LinearGradient>
     </TouchableOpacity>

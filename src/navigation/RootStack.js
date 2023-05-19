@@ -36,7 +36,7 @@ import OrdersCTVDelivering from "@screens/OrdersCTVDelivering";
 import DeliveryFail from "../modal/DeliveryFail";
 import LoadingScreen from "@screens/LoadingScreen";
 import CodePushUpdate from "../modal/CodePushUpdate";
-
+import TrialScreen from "@screens/TrialScreen";
 const Stack = createStackNavigator();
 
 export default function MainContainer() {
@@ -94,6 +94,7 @@ export default function MainContainer() {
             </>
           ) : (
             <>
+              <Stack.Screen name={"TrialScreen"} component={TrialScreen} />
               <Stack.Screen name={"LoginScreen"} component={LoginScreen} />
               <Stack.Screen
                 name={"RegisterScreen"}
