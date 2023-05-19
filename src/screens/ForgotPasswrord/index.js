@@ -19,7 +19,7 @@ const ForgotPassword = (props) => {
   const { top } = useSafeAreaInsets();
   const [phone, setphone] = useState("");
   return (
-    <ImageBackground source={images.bg_fake} style={styles.bg_container}>
+    <ImageBackground source={images.bg_container} style={styles.bg_container}>
       <Block alignCenter marginBottom={30}>
         <Image source={images.logo_text} style={styles.logo} />
         <Text
@@ -87,12 +87,6 @@ const ForgotPassword = (props) => {
           Quay Lại
         </Text>
       </Pressable>
-      <TouchableOpacity
-        style={{ backgroundColor: "red" }}
-        onPress={() => navigate("NewPassScreen")}
-      >
-        <Text>sssssss</Text>
-      </TouchableOpacity>
     </ImageBackground>
   );
 };
