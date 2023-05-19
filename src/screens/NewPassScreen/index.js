@@ -67,7 +67,7 @@ const NewPassScreen = (props) => {
   }, []);
 
   return (
-    <ImageBackground source={images.bg_fake}>
+    <ImageBackground source={images.bg_container} style={styles.bg_container}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <Block
           height={height + keyboardHeight}
@@ -197,5 +197,8 @@ const styles = StyleSheet.create({
   },
   ic_eye: {
     tintColor: theme.colors.black,
+  },
+  bg_container: {
+    flex: 1,
   },
 });
