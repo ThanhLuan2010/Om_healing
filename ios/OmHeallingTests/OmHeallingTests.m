@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface VinaFarmTests : XCTestCase
+@interface OmHeallingTests : XCTestCase
 
 @end
 
-@implementation VinaFarmTests
+@implementation OmHeallingTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {

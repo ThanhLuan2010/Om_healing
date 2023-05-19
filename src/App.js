@@ -23,7 +23,6 @@ const App = () => {
   const { isLoading } = useSelector(commonSelect);
   const [isLoadingView, setisLoadingView] = useState(true);
   const { isUpdate, progres } = useSelector(codePushSelect);
-  console.log("=====progress====", progres);
   useEffect(() => {
     messaging().requestPermission();
     setTimeout(() => {

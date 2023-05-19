@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* VinaFarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* VinaFarmTests.m */; };
+		00E356F31AD99517003FC87E /* OmHeallingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* OmHeallingTests.m */; };
 		0399066A8AE649ED94A48191 /* SourceSans3-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C14F3AF4905741E6AABF3580 /* SourceSans3-LightItalic.ttf */; };
 		0462088464954771AFBBE3B7 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3522AC6F58E741DFAFBE06AE /* Inter-Regular.ttf */; };
-		094AF4CB4A5FE331F5479033 /* libPods-VinaFarm.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8495AF24A8A893125055BE2E /* libPods-VinaFarm.a */; };
+		094AF4CB4A5FE331F5479033 /* libPods-OmHealling.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8495AF24A8A893125055BE2E /* libPods-OmHealling.a */; };
 		11DA23D15E7F4963AF511938 /* SourceSans3-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 419A7D00DA8842E98CF70D18 /* SourceSans3-Italic.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -28,7 +28,7 @@
 		4FF09C79111C4C22AAFE423F /* SourceSans3-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C178BE08C178420A8AD70E58 /* SourceSans3-BoldItalic.ttf */; };
 		5A0F95448F3645BDA3BD5E69 /* SourceSans3-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E732A7FB6AC44E8898B19AF /* SourceSans3-SemiBold.ttf */; };
 		69D2AA0AC2574D7BA3E31A3E /* SourceSans3-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B571D045D0984550AA7435A6 /* SourceSans3-Regular.ttf */; };
-		6C1552EBDC0AFB0D0D2115E0 /* libPods-VinaFarm-VinaFarmTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98003CAD1BC97DF34549490 /* libPods-VinaFarm-VinaFarmTests.a */; };
+		6C1552EBDC0AFB0D0D2115E0 /* libPods-OmHealling-OmHeallingTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A98003CAD1BC97DF34549490 /* libPods-OmHealling-OmHeallingTests.a */; };
 		728C513CF68F48D9803ED771 /* BeVietnamPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1237B6C2B7DA45C09239A81C /* BeVietnamPro-SemiBold.ttf */; };
 		748CC150CF5E4523BB9E0DB9 /* SourceSans3-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AFA6C42F2DA54D0EAD56514A /* SourceSans3-Bold.ttf */; };
 		7A81C20E9DAC461E85FE1B49 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4486E2667F3947778D017F9B /* Inter-ExtraBold.ttf */; };
@@ -51,48 +51,48 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = VinaFarm;
+			remoteInfo = OmHealling;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* VinaFarmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VinaFarmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* OmHeallingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OmHeallingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* VinaFarmTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VinaFarmTests.m; sourceTree = "<group>"; };
-		047DB0EB290CE15700E33209 /* VinaFarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = VinaFarm.entitlements; path = VinaFarm/VinaFarm.entitlements; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* OmHeallingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OmHeallingTests.m; sourceTree = "<group>"; };
+		047DB0EB290CE15700E33209 /* OmHealling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = OmHealling.entitlements; path = OmHealling/OmHealling.entitlements; sourceTree = "<group>"; };
 		09EE41DBB8F74268B3721DB9 /* Inter-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Medium.ttf"; path = "../src/assets/fonts/Inter-Medium.ttf"; sourceTree = "<group>"; };
 		1237B6C2B7DA45C09239A81C /* BeVietnamPro-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BeVietnamPro-SemiBold.ttf"; path = "../src/assets/fonts/BeVietnamPro-SemiBold.ttf"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* VinaFarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VinaFarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = VinaFarm/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = VinaFarm/AppDelegate.mm; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = VinaFarm/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = VinaFarm/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = VinaFarm/main.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* OmHealling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OmHealling.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = OmHealling/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = OmHealling/AppDelegate.mm; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = OmHealling/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = OmHealling/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = OmHealling/main.m; sourceTree = "<group>"; };
 		13EFDF7D24A0462482B5A50E /* BeVietnamPro-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BeVietnamPro-BlackItalic.ttf"; path = "../src/assets/fonts/BeVietnamPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		191A5931029D4733804DAEAB /* BeVietnamPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BeVietnamPro-SemiBoldItalic.ttf"; path = "../src/assets/fonts/BeVietnamPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		29D95775F950418DBD28D55A /* BeVietnamPro-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BeVietnamPro-Black.ttf"; path = "../src/assets/fonts/BeVietnamPro-Black.ttf"; sourceTree = "<group>"; };
-		32C0863028D773C9009B0312 /* VinaFarm-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VinaFarm-Bridging-Header.h"; sourceTree = "<group>"; };
+		32C0863028D773C9009B0312 /* OmHealling-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OmHealling-Bridging-Header.h"; sourceTree = "<group>"; };
 		32C0863128D773CA009B0312 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		32F87E5928D75AA700C7B019 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3522AC6F58E741DFAFBE06AE /* Inter-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Regular.ttf"; path = "../src/assets/fonts/Inter-Regular.ttf"; sourceTree = "<group>"; };
 		3671DA75AE144C888A055309 /* SourceSans3-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-Light.ttf"; path = "../src/assets/fonts/SourceSans3-Light.ttf"; sourceTree = "<group>"; };
-		3B4392A12AC88292D35C810B /* Pods-VinaFarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VinaFarm.debug.xcconfig"; path = "Target Support Files/Pods-VinaFarm/Pods-VinaFarm.debug.xcconfig"; sourceTree = "<group>"; };
+		3B4392A12AC88292D35C810B /* Pods-OmHealling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmHealling.debug.xcconfig"; path = "Target Support Files/Pods-OmHealling/Pods-OmHealling.debug.xcconfig"; sourceTree = "<group>"; };
 		419A7D00DA8842E98CF70D18 /* SourceSans3-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-Italic.ttf"; path = "../src/assets/fonts/SourceSans3-Italic.ttf"; sourceTree = "<group>"; };
 		4486E2667F3947778D017F9B /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-ExtraBold.ttf"; path = "../src/assets/fonts/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
 		45727C3E71794CF1BC9900C7 /* BeVietnamPro-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BeVietnamPro-Italic.ttf"; path = "../src/assets/fonts/BeVietnamPro-Italic.ttf"; sourceTree = "<group>"; };
 		4FEF906832184EEEB1C9C086 /* SourceSans3-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-SemiBoldItalic.ttf"; path = "../src/assets/fonts/SourceSans3-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-VinaFarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VinaFarm.release.xcconfig"; path = "Target Support Files/Pods-VinaFarm/Pods-VinaFarm.release.xcconfig"; sourceTree = "<group>"; };
+		5709B34CF0A7D63546082F79 /* Pods-OmHealling.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmHealling.release.xcconfig"; path = "Target Support Files/Pods-OmHealling/Pods-OmHealling.release.xcconfig"; sourceTree = "<group>"; };
 		5993BB35DFA04C99AC415D66 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-ExtraLight.ttf"; path = "../src/assets/fonts/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-VinaFarm-VinaFarmTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VinaFarm-VinaFarmTests.debug.xcconfig"; path = "Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B7EB9410499542E8C5724F5 /* Pods-OmHealling-OmHeallingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmHealling-OmHeallingTests.debug.xcconfig"; path = "Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E732A7FB6AC44E8898B19AF /* SourceSans3-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-SemiBold.ttf"; path = "../src/assets/fonts/SourceSans3-SemiBold.ttf"; sourceTree = "<group>"; };
 		6A5CDAA6832A4DEE9D716ED2 /* SourceSans3-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-Black.ttf"; path = "../src/assets/fonts/SourceSans3-Black.ttf"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = VinaFarm/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		8495AF24A8A893125055BE2E /* libPods-VinaFarm.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VinaFarm.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-VinaFarm-VinaFarmTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VinaFarm-VinaFarmTests.release.xcconfig"; path = "Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests.release.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = OmHealling/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8495AF24A8A893125055BE2E /* libPods-OmHealling.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmHealling.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89C6BE57DB24E9ADA2F236DE /* Pods-OmHealling-OmHeallingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OmHealling-OmHeallingTests.release.xcconfig"; path = "Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests.release.xcconfig"; sourceTree = "<group>"; };
 		8CE0B6E8EA944D41A81E17B8 /* SourceSans3-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-BlackItalic.ttf"; path = "../src/assets/fonts/SourceSans3-BlackItalic.ttf"; sourceTree = "<group>"; };
 		99A1A286E91F40A5BF3EE3D0 /* Inter-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Thin.ttf"; path = "../src/assets/fonts/Inter-Thin.ttf"; sourceTree = "<group>"; };
 		9DFF63836D154C8DA3692041 /* BeVietnamPro-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "BeVietnamPro-Light.ttf"; path = "../src/assets/fonts/BeVietnamPro-Light.ttf"; sourceTree = "<group>"; };
-		A98003CAD1BC97DF34549490 /* libPods-VinaFarm-VinaFarmTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VinaFarm-VinaFarmTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98003CAD1BC97DF34549490 /* libPods-OmHealling-OmHeallingTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OmHealling-OmHeallingTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA870D7ADEDF401C9F2CA015 /* Inter-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Inter-Light.ttf"; path = "../src/assets/fonts/Inter-Light.ttf"; sourceTree = "<group>"; };
 		AFA6C42F2DA54D0EAD56514A /* SourceSans3-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-Bold.ttf"; path = "../src/assets/fonts/SourceSans3-Bold.ttf"; sourceTree = "<group>"; };
 		B571D045D0984550AA7435A6 /* SourceSans3-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SourceSans3-Regular.ttf"; path = "../src/assets/fonts/SourceSans3-Regular.ttf"; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C1552EBDC0AFB0D0D2115E0 /* libPods-VinaFarm-VinaFarmTests.a in Frameworks */,
+				6C1552EBDC0AFB0D0D2115E0 /* libPods-OmHealling-OmHeallingTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,20 +119,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				094AF4CB4A5FE331F5479033 /* libPods-VinaFarm.a in Frameworks */,
+				094AF4CB4A5FE331F5479033 /* libPods-OmHealling.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* VinaFarmTests */ = {
+		00E356EF1AD99517003FC87E /* OmHeallingTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* VinaFarmTests.m */,
+				00E356F21AD99517003FC87E /* OmHeallingTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = VinaFarmTests;
+			path = OmHeallingTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -177,10 +177,10 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* VinaFarm */ = {
+		13B07FAE1A68108700A75B9A /* OmHealling */ = {
 			isa = PBXGroup;
 			children = (
-				047DB0EB290CE15700E33209 /* VinaFarm.entitlements */,
+				047DB0EB290CE15700E33209 /* OmHealling.entitlements */,
 				32F87E5928D75AA700C7B019 /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -189,15 +189,15 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = VinaFarm;
+			name = OmHealling;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				8495AF24A8A893125055BE2E /* libPods-VinaFarm.a */,
-				A98003CAD1BC97DF34549490 /* libPods-VinaFarm-VinaFarmTests.a */,
+				8495AF24A8A893125055BE2E /* libPods-OmHealling.a */,
+				A98003CAD1BC97DF34549490 /* libPods-OmHealling-OmHeallingTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,14 +213,14 @@
 			isa = PBXGroup;
 			children = (
 				32C0863128D773CA009B0312 /* File.swift */,
-				13B07FAE1A68108700A75B9A /* VinaFarm */,
+				13B07FAE1A68108700A75B9A /* OmHealling */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* VinaFarmTests */,
+				00E356EF1AD99517003FC87E /* OmHeallingTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
 				0371FDF7C9F143D2A9767942 /* Resources */,
-				32C0863028D773C9009B0312 /* VinaFarm-Bridging-Header.h */,
+				32C0863028D773C9009B0312 /* OmHealling-Bridging-Header.h */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -230,8 +230,8 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* VinaFarm.app */,
-				00E356EE1AD99517003FC87E /* VinaFarmTests.xctest */,
+				13B07F961A680F5B00A75B9A /* OmHealling.app */,
+				00E356EE1AD99517003FC87E /* OmHeallingTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,10 +239,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-VinaFarm.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-VinaFarm.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-VinaFarm-VinaFarmTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-VinaFarm-VinaFarmTests.release.xcconfig */,
+				3B4392A12AC88292D35C810B /* Pods-OmHealling.debug.xcconfig */,
+				5709B34CF0A7D63546082F79 /* Pods-OmHealling.release.xcconfig */,
+				5B7EB9410499542E8C5724F5 /* Pods-OmHealling-OmHeallingTests.debug.xcconfig */,
+				89C6BE57DB24E9ADA2F236DE /* Pods-OmHealling-OmHeallingTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -250,9 +250,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* VinaFarmTests */ = {
+		00E356ED1AD99517003FC87E /* OmHeallingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "VinaFarmTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "OmHeallingTests" */;
 			buildPhases = (
 				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
@@ -266,14 +266,14 @@
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = VinaFarmTests;
-			productName = VinaFarmTests;
-			productReference = 00E356EE1AD99517003FC87E /* VinaFarmTests.xctest */;
+			name = OmHeallingTests;
+			productName = OmHeallingTests;
+			productReference = 00E356EE1AD99517003FC87E /* OmHeallingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* VinaFarm */ = {
+		13B07F861A680F5B00A75B9A /* OmHealling */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "VinaFarm" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "OmHealling" */;
 			buildPhases = (
 				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -289,9 +289,9 @@
 			);
 			dependencies = (
 			);
-			name = VinaFarm;
-			productName = VinaFarm;
-			productReference = 13B07F961A680F5B00A75B9A /* VinaFarm.app */;
+			name = OmHealling;
+			productName = OmHealling;
+			productReference = 13B07F961A680F5B00A75B9A /* OmHealling.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -311,7 +311,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "VinaFarm" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "OmHealling" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -324,8 +324,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* VinaFarm */,
-				00E356ED1AD99517003FC87E /* VinaFarmTests */,
+				13B07F861A680F5B00A75B9A /* OmHealling */,
+				00E356ED1AD99517003FC87E /* OmHeallingTests */,
 			);
 		};
 /* End PBXProject section */
@@ -400,15 +400,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm/Pods-VinaFarm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling/Pods-OmHealling-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm/Pods-VinaFarm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling/Pods-OmHealling-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VinaFarm/Pods-VinaFarm-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmHealling/Pods-OmHealling-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		684C5C689B250B84065E7289 /* [CP-User] [RNFB] Core Configuration */ = {
@@ -439,7 +439,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VinaFarm-VinaFarmTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OmHealling-OmHeallingTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -461,7 +461,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-VinaFarm-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-OmHealling-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -474,15 +474,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
@@ -491,15 +491,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm/Pods-VinaFarm-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling/Pods-OmHealling-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm/Pods-VinaFarm-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling/Pods-OmHealling-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VinaFarm/Pods-VinaFarm-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmHealling/Pods-OmHealling-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
@@ -508,15 +508,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VinaFarm-VinaFarmTests/Pods-VinaFarm-VinaFarmTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OmHealling-OmHeallingTests/Pods-OmHealling-OmHeallingTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -545,7 +545,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* VinaFarmTests.m in Sources */,
+				00E356F31AD99517003FC87E /* OmHeallingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +564,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* VinaFarm */;
+			target = 13B07F861A680F5B00A75B9A /* OmHealling */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -572,7 +572,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-VinaFarm-VinaFarmTests.debug.xcconfig */;
+			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-OmHealling-OmHeallingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -580,7 +580,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = VinaFarmTests/Info.plist;
+				INFOPLIST_FILE = OmHeallingTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -592,20 +592,20 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vina.farm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.om.healling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinaFarm.app/VinaFarm";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OmHealling.app/OmHealling";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-VinaFarm-VinaFarmTests.release.xcconfig */;
+			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-OmHealling-OmHeallingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				INFOPLIST_FILE = VinaFarmTests/Info.plist;
+				INFOPLIST_FILE = OmHeallingTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -617,19 +617,19 @@
 					"-lc++",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vina.farm;
+				PRODUCT_BUNDLE_IDENTIFIER = com.om.healling;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VinaFarm.app/VinaFarm";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OmHealling.app/OmHealling";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-VinaFarm.debug.xcconfig */;
+			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-OmHealling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = VinaFarm/VinaFarm.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OmHealling/OmHealling.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = AP547978CJ;
 				ENABLE_BITCODE = NO;
@@ -715,8 +715,8 @@
 					"\"$(PODS_TARGET_SRCROOT)/include/\"",
 					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
-				INFOPLIST_FILE = VinaFarm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Vina Farm";
+				INFOPLIST_FILE = OmHealling/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Om Healling";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -727,9 +727,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vina.farm;
-				PRODUCT_NAME = VinaFarm;
-				SWIFT_OBJC_BRIDGING_HEADER = "VinaFarm-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.om.healling;
+				PRODUCT_NAME = OmHealling;
+				SWIFT_OBJC_BRIDGING_HEADER = "OmHealling-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -738,11 +738,11 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-VinaFarm.release.xcconfig */;
+			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-OmHealling.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = VinaFarm/VinaFarm.entitlements;
+				CODE_SIGN_ENTITLEMENTS = OmHealling/OmHealling.entitlements;
 				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = AP547978CJ;
 				HEADER_SEARCH_PATHS = (
@@ -827,8 +827,8 @@
 					"\"$(PODS_TARGET_SRCROOT)/include/\"",
 					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
-				INFOPLIST_FILE = VinaFarm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Vina Farm";
+				INFOPLIST_FILE = OmHealling/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Om Healling";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -839,9 +839,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vina.farm;
-				PRODUCT_NAME = VinaFarm;
-				SWIFT_OBJC_BRIDGING_HEADER = "VinaFarm-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = com.om.healling;
+				PRODUCT_NAME = OmHealling;
+				SWIFT_OBJC_BRIDGING_HEADER = "OmHealling-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -987,7 +987,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "VinaFarmTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "OmHeallingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -996,7 +996,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "VinaFarm" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "OmHealling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -1005,7 +1005,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "VinaFarm" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "OmHealling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

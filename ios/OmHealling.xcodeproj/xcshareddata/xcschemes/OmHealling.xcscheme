@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "VinaFarm.app"
-               BlueprintName = "VinaFarm"
-               ReferencedContainer = "container:VinaFarm.xcodeproj">
+               BuildableName = "OmHealling.app"
+               BlueprintName = "OmHealling"
+               ReferencedContainer = "container:OmHealling.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "VinaFarmTests.xctest"
-               BlueprintName = "VinaFarmTests"
-               ReferencedContainer = "container:VinaFarm.xcodeproj">
+               BuildableName = "OmHeallingTests.xctest"
+               BlueprintName = "OmHeallingTests"
+               ReferencedContainer = "container:OmHealling.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "VinaFarm.app"
-            BlueprintName = "VinaFarm"
-            ReferencedContainer = "container:VinaFarm.xcodeproj">
+            BuildableName = "OmHealling.app"
+            BlueprintName = "OmHealling"
+            ReferencedContainer = "container:OmHealling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "VinaFarm.app"
-            BlueprintName = "VinaFarm"
-            ReferencedContainer = "container:VinaFarm.xcodeproj">
+            BuildableName = "OmHealling.app"
+            BlueprintName = "OmHealling"
+            ReferencedContainer = "container:OmHealling.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

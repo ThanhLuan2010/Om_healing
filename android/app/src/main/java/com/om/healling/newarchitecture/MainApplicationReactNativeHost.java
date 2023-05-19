@@ -1,4 +1,4 @@
-package com.vina.farm.newarchitecture;
+package com.om.healling.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.fabric.ReactNativeConfig;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.vina.farm.BuildConfig;
-import com.vina.farm.newarchitecture.components.MainComponentsRegistry;
-import com.vina.farm.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.om.healling.BuildConfig;
+import com.om.healling.newarchitecture.components.MainComponentsRegistry;
+import com.om.healling.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
