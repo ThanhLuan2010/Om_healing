@@ -39,7 +39,10 @@ const TrialScreen = () => {
   };
   const ButtonGoogle = () => {
     return (
-      <TouchableOpacity style={styles.btnGoogle}>
+      <TouchableOpacity
+        style={styles.btnGoogle}
+        onPress={() => navigate("SellComponent")}
+      >
         <Block row alignCenter justifyCenter>
           <Image source={images.ic_google} style={styles.ic_google} />
 
@@ -84,7 +87,8 @@ const TrialScreen = () => {
       </Block>
 
       {ButtonTrial()}
-      <GradientButton onPress={() =>navigate("LoginScreen")}
+      <GradientButton
+        onPress={() => navigate("LoginScreen")}
         style={styles.btnNumPhone}
         colors={theme.colors.gradient_red}
         title="Đăng nhập bằng  số điện thoại"

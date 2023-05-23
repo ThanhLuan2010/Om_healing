@@ -37,7 +37,7 @@ import DeliveryFail from "../modal/DeliveryFail";
 import LoadingScreen from "@screens/LoadingScreen";
 import CodePushUpdate from "../modal/CodePushUpdate";
 import TrialScreen from "@screens/TrialScreen";
-import HomeScreen from "../screens/HomeScreen";
+import SellComponent from "@components/SellComponent";
 const Stack = createStackNavigator();
 
 export default function MainContainer() {
@@ -108,7 +108,8 @@ export default function MainContainer() {
               />
               <Stack.Screen name={"OtpScreen"} component={OtpScreen} />
               <Stack.Screen name={"NewPassScreen"} component={NewPassScreen} />
-              <Stack.Screen name="HomeScreen" component={HomeScreen} />
+              <Stack.Screen name={"SellComponent"} component={SellComponent} />
+
             </>
           )}
         </Stack.Group>
