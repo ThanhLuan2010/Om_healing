@@ -56,6 +56,10 @@ export const theme = {
     gradient_red: ["#521717FA", "#8F1515"],
     gradient_opYellow: ["#FFF6DF", "#FFEAC2"],
     milk_orange: "#FFEAC2",
+    disable: "#A4A4A4",
+    blur_red: "#F3D7D7",
+    orange: "#B85902",
+    gray: "#727272",
   },
 
   fonts: {

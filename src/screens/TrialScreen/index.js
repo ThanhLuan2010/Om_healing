@@ -23,7 +23,7 @@ const TrialScreen = () => {
             style={styles.borderColor}
             colors={theme.colors.gradient_opYellow}
           >
-            <TouchableOpacity style={styles.btnTrial}>
+            <TouchableOpacity style={styles.btnTrial} onPress={()=>navigate("HomeScreen")}>
               <Text
                 color={theme.colors.color_register}
                 size={18}
