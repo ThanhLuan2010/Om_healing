@@ -37,6 +37,7 @@ import DeliveryFail from "../modal/DeliveryFail";
 import LoadingScreen from "@screens/LoadingScreen";
 import CodePushUpdate from "../modal/CodePushUpdate";
 import TrialScreen from "@screens/TrialScreen";
+import HomeScreen from "../screens/HomeScreen";
 const Stack = createStackNavigator();
 
 export default function MainContainer() {
@@ -59,6 +60,7 @@ export default function MainContainer() {
           {isLoggedIn ? (
             <>
               <Stack.Screen name={routes.BOTTOM_TAB} component={BottomTab} />
+
               <Stack.Screen name={"CTVScreen"} component={CTVScreen} />
               <Stack.Screen name={"OrderScreen"} component={OrderScreen} />
               <Stack.Screen name={"AccountScreen"} component={AccountScreen} />
@@ -106,6 +108,7 @@ export default function MainContainer() {
               />
               <Stack.Screen name={"OtpScreen"} component={OtpScreen} />
               <Stack.Screen name={"NewPassScreen"} component={NewPassScreen} />
+              <Stack.Screen name="HomeScreen" component={HomeScreen} />
             </>
           )}
         </Stack.Group>

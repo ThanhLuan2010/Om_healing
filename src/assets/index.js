@@ -70,5 +70,18 @@ const images = {
   ic_facebook: require("./images/ic_facebook.png"),
   bg_container: require("./images/bg_img.png"),
   logo_text: require("./images/logo_text.png"),
+  ic_user: require("./images/ic_user.png"),
+  ic_setting: require("./images/ic_setting.png"),
+
+  carousel: require("./images/carousel.png"),
+  set_bell: require("./images/set_bell.png"),
+  tingsha: require("./images/tingsha.png"),
+  imgAll: require("./images/imgAll.png"),
+  item_bell: require("./images/item_bell.png"),
+  baseball: require("./images/baseball_bell.png"),
+  img_bell: require("./images/img_bell.png"),
+  course: require("./images/course.png"),
+  heal: require("./images/heal.png"),
+  ic_clock: require("./images/ic_clock.png"),
 };
 export { icons, lottie, images };
