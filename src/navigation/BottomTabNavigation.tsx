@@ -11,136 +11,6 @@ import CustomTabBar from "./CustomTabBar";
 
 const Tab = createBottomTabNavigator();
 
-// const tabs: TabsConfigsType = {
-//   HomeScreen: {
-//     icon: ({ progress, focused }) => (
-//       <Block alignCenter>
-//         <Image
-//           style={{
-//             tintColor: focused ? "#10A31E" : "#8A9F8B",
-//             width: focused ? 27 : 27,
-//             height: focused ? 27 : 27,
-//             resizeMode: "contain",
-//           }}
-//           source={require("../assets/images/ic_tabHome.png")}
-//         />
-//         {focused && (
-//           <Text
-//             color="#10A31E"
-//             numberOfLines={1}
-//             marginHorizontal={8}
-//             marginTop={5}
-//             size={14}
-//             center
-//           >
-//             Trang chủ
-//           </Text>
-//         )}
-//       </Block>
-//     ),
-//     renderTitle: ({ progress, focused }) => (
-//       <Text style={{ marginTop: 10, color: focused ? "#10A31E" : "#8A9F8B" }}>
-//         {"Trang chủ"}
-//       </Text>
-//     ),
-//   },
-//   ProductScreen: {
-//     icon: ({ progress, focused }) => (
-//       <Block alignCenter>
-//         <Image
-//           style={{
-//             tintColor: focused ? "#10A31E" : "#8A9F8B",
-//             width: focused ? 27 : 27,
-//             height: focused ? 27 : 27,
-//             resizeMode: "contain",
-//           }}
-//           source={require("../assets/images/ic_tabProduct.png")}
-//         />
-//         {focused && (
-//           <Text
-//             color="#10A31E"
-//             numberOfLines={1}
-//             marginHorizontal={8}
-//             marginTop={5}
-//             size={14}
-//             center
-//           >
-//             Sản phẩm
-//           </Text>
-//         )}
-//       </Block>
-//     ),
-//     renderTitle: ({ progress, focused }) => (
-//       <Text style={{ marginTop: 10, color: focused ? "#10A31E" : "#8A9F8B" }}>
-//         {"Sản phẩm"}
-//       </Text>
-//     ),
-//   },
-//   DonHangScreen: {
-//     icon: ({ progress, focused }) => (
-//       <Block alignCenter>
-//         <Image
-//           style={{
-//             tintColor: focused ? "#10A31E" : "#8A9F8B",
-//             width: focused ? 27 : 27,
-//             height: focused ? 27 : 27,
-//             resizeMode: "contain",
-//           }}
-//           source={require("../assets/images/ic_tabDonHang.png")}
-//         />
-//         {focused && (
-//           <Text
-//             color="#10A31E"
-//             numberOfLines={1}
-//             marginHorizontal={8}
-//             marginTop={5}
-//             size={14}
-//             center
-//           >
-//             Đơn hàng
-//           </Text>
-//         )}
-//       </Block>
-//     ),
-//     renderTitle: ({ progress, focused }) => (
-//       <Text style={{ marginTop: 10, color: focused ? "#10A31E" : "#8A9F8B" }}>
-//         {"Đơn hàng"}
-//       </Text>
-//     ),
-//   },
-//   NewsScreen: {
-//     icon: ({ progress, focused }) => (
-//       <Block alignCenter>
-//         <Image
-//           style={{
-//             tintColor: focused ? "#10A31E" : "#8A9F8B",
-//             width: focused ? 27 : 27,
-//             height: focused ? 27 : 27,
-//             resizeMode: "contain",
-//           }}
-//           source={require("../assets/images/ic_tabNews.png")}
-//         />
-//         {focused && (
-//           <Text
-//             color="#10A31E"
-//             numberOfLines={1}
-//             marginHorizontal={8}
-//             marginTop={5}
-//             size={14}
-//             center
-//           >
-//             Tin tức
-//           </Text>
-//         )}
-//       </Block>
-//     ),
-//     renderTitle: ({ progress, focused }) => (
-//       <Text style={{ marginTop: 10, color: focused ? "#10A31E" : "#8A9F8B" }}>
-//         {"Tin tức"}
-//       </Text>
-//     ),
-//   },
-// };
 export default function MyTabs() {
   const { width } = useWindowDimensions();
   return (
@@ -149,12 +19,27 @@ export default function MyTabs() {
         headerShown: false,
       }}
       tabBar={(props) => <CustomTabBar {...props} />}
-     
     >
-      <Tab.Screen name="HomeScreen" component={HomeScreen} />
-      <Tab.Screen name="ProductScreen" component={ProductScreen} />
-      <Tab.Screen name="DonHangScreen" component={DonHangScreen} />
-      <Tab.Screen name="NewsScreen" component={NewsScreen} />
+      <Tab.Screen
+        options={{ title: "Trang chủ" }}
+        name="HomeScreen"
+        component={HomeScreen}
+      />
+      <Tab.Screen
+        options={{ title: "Bán hàng" }}
+        name="ProductScreen"
+        component={ProductScreen}
+      />
+      <Tab.Screen
+        options={{ title: "Khoá học" }}
+        name="DonHangScreen"
+        component={DonHangScreen}
+      />
+      <Tab.Screen
+        options={{ title: "Tin tức" }}
+        name="NewsScreen"
+        component={NewsScreen}
+      />
     </Tab.Navigator>
   );
 }

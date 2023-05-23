@@ -55,6 +55,7 @@ export const theme = {
     color_time: "#FF0000",
     gradient_red: ["#521717FA", "#8F1515"],
     gradient_opYellow: ["#FFF6DF", "#FFEAC2"],
+    disable:"#A4A4A4"
     blur_red: "#F3D7D7",
     orange: "#B85902",
     gray: "#727272",
