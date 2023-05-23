@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import AnimatedTabBar, { TabsConfigsType } from "curved-bottom-navigation-bar";
 import React from "react";
 import { Image, useWindowDimensions, View } from "react-native";
-import HomeScreen from "../screens/Bottom/HomeScreen";
+import HomeScreen from "../screens/HomeScreen";
 import ProductScreen from "@screens/Bottom/ProductScreen";
 import DonHangScreen from "@screens/Bottom/DonHang";
 import NewsScreen from "@screens/Bottom/NewsScreen";
