@@ -57,8 +57,7 @@ const images = {
   ic_support: require("./images/ic_support.png"),
   blur_bg: require("./images/blur_bg.png"),
   logo_chat: require("./images/logo_chat.png"),
-  message_frame: require("./images/message_frame.png"),
-  message_frame_white: require("./images/message_frame_white.png"),
+
   ic_cancelPending: require("./images/ic_cancelPending.png"),
   ic_hetHang: require("./images/ic_hetHang.png"),
   bg_blur1: require("./images/bg_blur1.png"),
@@ -70,5 +69,8 @@ const images = {
   ic_facebook: require("./images/ic_facebook.png"),
   bg_container: require("./images/bg_img.png"),
   logo_text: require("./images/logo_text.png"),
+  ic_tab_cart: require("./images/ic_tab_cart.png"),
+  ic_tab_khoahoc: require("./images/ic_tab_khoahoc.png"),
+  ic_tab_news: require("./images/ic_tab_news.png"),
 };
 export { icons, lottie, images };
