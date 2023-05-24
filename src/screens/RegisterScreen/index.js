@@ -14,6 +14,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import { showMessage } from "react-native-flash-message";
 import LinearGradient from "react-native-linear-gradient";
@@ -51,10 +52,7 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <LinearGradient
-      style={[styles.backgroundColor, { paddingTop: top }]}
-      colors={theme.colors.backgroundColor}
-    >
+    <ImageBackground source={images.login} style={styles.login}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <KeyboardAvoidingView behavior="padding">
           <Block
@@ -68,7 +66,7 @@ export default function LoginScreen({ navigation }) {
               marginTop={32}
               size={24}
               fontType={"bold"}
-              color={theme.colors.white}
+              color={theme.colors.redesign}
             >
               Đăng ký
             </Text>
@@ -77,8 +75,8 @@ export default function LoginScreen({ navigation }) {
             <Block flex space={"between"}>
               <Block marginBottom={30}>
                 <Block row alignCenter marginBottom={20}>
-                  <Image source={icons.ic_phone} style={styles.ic_phone} />
-                  <Text size={18} color={theme.colors.white} marginLeft={14}>
+                  <Image source={images.ic_phone} style={styles.ic_phone} />
+                  <Text size={18} color={theme.colors.black} marginLeft={14}>
                     Số điện thoại
                   </Text>
                 </Block>
@@ -107,8 +105,8 @@ export default function LoginScreen({ navigation }) {
 
               <Block marginBottom={30}>
                 <Block row alignCenter marginBottom={20}>
-                  <Image source={icons.ic_key} style={styles.ic_phone} />
-                  <Text marginLeft={14} size={18} color={theme.colors.white}>
+                  <Image source={images.ic_key} style={styles.ic_phone} />
+                  <Text marginLeft={14} size={18} color={theme.colors.black}>
                     Mật khẩu
                   </Text>
                 </Block>
@@ -134,8 +132,8 @@ export default function LoginScreen({ navigation }) {
 
               <Block marginBottom={30}>
                 <Block row alignCenter marginBottom={20}>
-                  <Image source={icons.ic_key} style={styles.ic_phone} />
-                  <Text marginLeft={14} size={18} color={theme.colors.white}>
+                  <Image source={images.ic_key} style={styles.ic_phone} />
+                  <Text marginLeft={14} size={18} color={theme.colors.black}>
                     Nhập lại mật khẩu
                   </Text>
                 </Block>
@@ -167,13 +165,17 @@ export default function LoginScreen({ navigation }) {
             <Block marginTop={20} marginBottom={40} justifyCenter>
               <GradientButton
                 title="Đăng Ký"
-                style={styles.button}
+                style={{
+                  backgroundColor: theme.colors.redesign,
+                  borderRadius: 10,
+                  alignItems: "center",
+                }}
                 styleTitle={styles.titleButton}
                 onPress={onRegister}
                 disable={phone && password && rePassword ? false : true}
               />
               <Pressable style={styles.btnRegister} onPress={() => goBack()}>
-                <Text size={18} color={theme.colors.white} center>
+                <Text size={18} color={theme.colors.redesign} center>
                   Quay lại
                 </Text>
               </Pressable>
@@ -181,7 +183,7 @@ export default function LoginScreen({ navigation }) {
           </Block>
         </KeyboardAvoidingView>
       </ScrollView>
-    </LinearGradient>
+    </ImageBackground>
   );
 }
 
@@ -202,7 +204,7 @@ const styles = StyleSheet.create({
   inputNumber: {
     flex: 1,
     fontSize: 18,
-    color: theme.colors.white,
+    color: theme.colors.black,
     fontFamily: theme.fonts.fontFamily.SourceSans3Regular,
     paddingVertical: 0,
   },

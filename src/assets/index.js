@@ -23,6 +23,8 @@ const icons = {
 
 const lottie = {};
 const images = {
+  ic_key: require("./images/ic_key.png"),
+  ic_phone: require("./images/ic_phone.png"),
   ic_tabHome: require("./images/ic_tabHome.png"),
   ic_tabProduct: require("./images/ic_tabProduct.png"),
   ic_tabDonHang: require("./images/ic_tabDonHang.png"),
@@ -36,6 +38,7 @@ const images = {
   ic_down: require("./images/ic_down.png"),
   ic_drawer: require("./images/ic_drawer.png"),
   logo: require("./images/logo.png"),
+  login: require("./images/login.png"), //login imagebackground
   ic_comment: require("./images/ic_comment.png"),
   ic_search_screen: require("./images/ic_search-greeen.png"),
   phan_bon: require("./images/phan_bon.png"),
