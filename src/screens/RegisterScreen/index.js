@@ -15,7 +15,6 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import { showMessage } from "react-native-flash-message";
 import LinearGradient from "react-native-linear-gradient";
