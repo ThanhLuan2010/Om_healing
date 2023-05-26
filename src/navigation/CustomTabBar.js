@@ -32,7 +32,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
   if (focusedOptions.tabBarVisible === false) {
     return null;
   }
-  const TAB_HEIGHT = 87;
+  const TAB_HEIGHT = getSize.v(90 + bottom/10);
   const rect = lineGenerator([
     [0, 0],
     [320 / 2, 0],
@@ -43,7 +43,8 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
   ]);
 
   const ICON_SIZE = getSize.s(75);
-  const CURVER_SIZE = ICON_SIZE + 4
+  const CURVER_SIZE = ICON_SIZE + getSize.s(4)
+  console.log('====width===',width)
 
   const DOT_X = width / 8 + (width * state.index) / 4 - CURVER_SIZE / 2;
   const center = lineGenerator.curve(curveBasis)([
@@ -55,17 +56,13 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
     [DOT_X + CURVER_SIZE * 0.01, CURVER_SIZE * 0.5],
     [DOT_X + CURVER_SIZE * 0.04, CURVER_SIZE * 0.6],
     [DOT_X + CURVER_SIZE * 0.09, CURVER_SIZE * 0.7],
-
     [DOT_X + CURVER_SIZE * 0.2, CURVER_SIZE * 0.81],
     [DOT_X + CURVER_SIZE * 0.3, CURVER_SIZE * 0.865],
     [DOT_X + CURVER_SIZE * 0.4, CURVER_SIZE * 0.899],
-
     [DOT_X + CURVER_SIZE * 0.5, CURVER_SIZE * 0.9],
-
     [DOT_X + CURVER_SIZE * 0.6, CURVER_SIZE * 0.898],
     [DOT_X + CURVER_SIZE * 0.7, CURVER_SIZE * 0.865],
     [DOT_X + CURVER_SIZE * 0.8, CURVER_SIZE * 0.81],
-
     [DOT_X + CURVER_SIZE * 0.91, CURVER_SIZE * 0.7],
     [DOT_X + CURVER_SIZE * 0.96, CURVER_SIZE * 0.6],
     [DOT_X + CURVER_SIZE * 0.99, CURVER_SIZE * 0.5],
@@ -76,9 +73,9 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
     [DOT_X + CURVER_SIZE, 0],
   ]);
 
-  const d = `M0,0L160,0L320,0L320,87L0,87L0,0 ${center}`;
+  const d = `M0,0L160,0L${width},0L${width},${TAB_HEIGHT}L0,${TAB_HEIGHT}L0,0 ${center}`;
   return (
-    <View style={styles.myTabBarContainer}>
+    <View style={[styles.myTabBarContainer,{height:TAB_HEIGHT}]}>
       <Svg width={width} height={TAB_HEIGHT}>
         <Path fill="url(#paint0_linear_335_1153)" d={d} />
         <Defs>
@@ -138,7 +135,7 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
               return (
                 <TouchableOpacity
                   style={{
-                    bottom: ICON_SIZE*0.1 -1.5,
+                    bottom: ICON_SIZE*0.07,
                     alignItems: "center",
                   }}
                 >
@@ -256,7 +253,6 @@ const styles = StyleSheet.create({
   },
   myTabBarContainer: {
     position: "absolute",
-    height: 80,
     width,
     shadowOffset: {
       width: 0,
@@ -265,7 +261,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     elevation: 5,
     backgroundColor: "rgba(0,0,0,0)",
-    bottom: 5,
+    bottom: -1,
+    paddingBottom:10
   },
   button: {
     width: width / 4,
