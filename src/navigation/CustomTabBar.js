@@ -2,8 +2,8 @@ import { images } from "@assets";
 import { Block, Text } from "@components";
 import { theme } from "@theme";
 import { getSize, height, width } from "@utils/responsive";
-import { line } from "d3-shape";
-import React, { memo, useState } from "react";
+import { line, curveBasis } from "d3-shape";
+import React, { memo, useState, useEffect } from "react";
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import RNLinearGradient from "react-native-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -32,57 +32,52 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
   if (focusedOptions.tabBarVisible === false) {
     return null;
   }
-  const TAB_HEIGHT = 87;
+  const TAB_HEIGHT = getSize.v(90 + bottom/10);
   const rect = lineGenerator([
     [0, 0],
-    [width / 2, 0],
-    [width, 0],
-    [width, TAB_HEIGHT],
-    [0, TAB_HEIGHT],
+    [320 / 2, 0],
+    [320, 0],
+    [320, 87],
+    [0, 87],
     [0, 0],
   ]);
+
   const ICON_SIZE = getSize.s(75);
+  const CURVER_SIZE = ICON_SIZE + getSize.s(4)
+  console.log('====width===',width)
 
-  const d = `M${getSize.s(64 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 
-  ${ICON_SIZE - getSize.s(7)}C${getSize.s(
-    86.0914 - 15 + (indexTab * width) / 4 - 10 * indexTab
-  )} 
-  ${ICON_SIZE - getSize.s(7)} ${getSize.s(
-    104 - 18 + (indexTab * width) / 4 - 10 * indexTab
-  )} 57.0914 
-  ${getSize.s(104 - 16 + (indexTab * width) / 4 - 10 * indexTab)} ${getSize.s(
-    35
-  )}C${getSize.s(104 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 
-  28.2546 ${getSize.s(102.33 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 
-  21.8992 ${getSize.s(99.3818 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 
-  16.3245C${getSize.s(96.4863 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 
-  10.8503 ${getSize.s(100.366 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 0 
-  ${getSize.s(
-    106.559 - 15 + (indexTab * width) / 4 - 10 * indexTab
-  )} 0H424C427.314 0 
-  ${width} 2.68629 ${width} 6V81C${width} 
-  84.3137 427.314 87 424 87H6.00001C2.6863 87 0 84.3137 0 81V6C0 2.68629 2.68629 0 6 
-  0H${getSize.s(
-    21.4413 - 15 + (indexTab * width) / 4 - 10 * indexTab
-  )}C${getSize.s(27.6341 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 
-  0 ${getSize.s(
-    31.5137 - 14 + (indexTab * width) / 4 - 10 * indexTab
-  )} 10.8503 ${getSize.s(28 - 15 + (indexTab * width) / 4 - 10 * indexTab)} 
-  16.3245C${getSize.s(
-    25.6697 - 13.5 + (indexTab * width) / 4 - 10 * indexTab
-  )} 21.8992 ${getSize.s(24 - 16 + (indexTab * width) / 4 - 10 * indexTab)} 
-  28.2546 ${getSize.s(
-    24 - 14.5 + (indexTab * width) / 4 - 10 * indexTab
-  )} 35C${getSize.s(
-    24 - 14.5 + (indexTab * width) / 4 - 10 * indexTab
-  )} 57.0914 ${getSize.s(
-    41.9086 - 14 + (indexTab * width) / 4 - 10 * indexTab
-  )} 75 ${getSize.s(64 - 17 + (indexTab * width) / 4 - 10 * indexTab)} 75Z`;
+  const DOT_X = width / 8 + (width * state.index) / 4 - CURVER_SIZE / 2;
+  const center = lineGenerator.curve(curveBasis)([
+    [DOT_X, 0],
+    [DOT_X + CURVER_SIZE *0.09, CURVER_SIZE * 0.1],
+    [DOT_X + CURVER_SIZE * 0.04 , CURVER_SIZE * 0.2],
+    [DOT_X + CURVER_SIZE * 0.01, CURVER_SIZE * 0.3],
+    [DOT_X , CURVER_SIZE * 0.4],
+    [DOT_X + CURVER_SIZE * 0.01, CURVER_SIZE * 0.5],
+    [DOT_X + CURVER_SIZE * 0.04, CURVER_SIZE * 0.6],
+    [DOT_X + CURVER_SIZE * 0.09, CURVER_SIZE * 0.7],
+    [DOT_X + CURVER_SIZE * 0.2, CURVER_SIZE * 0.81],
+    [DOT_X + CURVER_SIZE * 0.3, CURVER_SIZE * 0.865],
+    [DOT_X + CURVER_SIZE * 0.4, CURVER_SIZE * 0.899],
+    [DOT_X + CURVER_SIZE * 0.5, CURVER_SIZE * 0.9],
+    [DOT_X + CURVER_SIZE * 0.6, CURVER_SIZE * 0.898],
+    [DOT_X + CURVER_SIZE * 0.7, CURVER_SIZE * 0.865],
+    [DOT_X + CURVER_SIZE * 0.8, CURVER_SIZE * 0.81],
+    [DOT_X + CURVER_SIZE * 0.91, CURVER_SIZE * 0.7],
+    [DOT_X + CURVER_SIZE * 0.96, CURVER_SIZE * 0.6],
+    [DOT_X + CURVER_SIZE * 0.99, CURVER_SIZE * 0.5],
+    [DOT_X + CURVER_SIZE, CURVER_SIZE * 0.4],
+    [DOT_X + CURVER_SIZE * 0.99, CURVER_SIZE * 0.3],
+    [DOT_X + CURVER_SIZE * 0.96, CURVER_SIZE * 0.2],
+    [DOT_X + CURVER_SIZE * 0.9, CURVER_SIZE * 0.1],
+    [DOT_X + CURVER_SIZE, 0],
+  ]);
 
+  const d = `M0,0L160,0L${width},0L${width},${TAB_HEIGHT}L0,${TAB_HEIGHT}L0,0 ${center}`;
   return (
-    <View style={styles.myTabBarContainer}>
+    <View style={[styles.myTabBarContainer,{height:TAB_HEIGHT}]}>
       <Svg width={width} height={TAB_HEIGHT}>
-        <Path fill="url(#paint0_linear_335_1153)" {...{ d }} />
+        <Path fill="url(#paint0_linear_335_1153)" d={d} />
         <Defs>
           <LinearGradient
             id="paint0_linear_335_1153"
@@ -102,7 +97,6 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
           style={{
             flexDirection: "row",
             flex: 1,
-            alignItems: "center",
             justifyContent: "center",
           }}
         >
@@ -126,8 +120,6 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
             const isFocused = state.index === index;
 
             const onPress = () => {
-              setindexTab(index);
-
               const event = navigation.emit({
                 type: "tabPress",
                 target: route.key,
@@ -141,7 +133,12 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
 
             if (isFocused) {
               return (
-                <TouchableOpacity style={{ bottom: getSize.s(7) }}>
+                <TouchableOpacity
+                  style={{
+                    bottom: ICON_SIZE*0.07,
+                    alignItems: "center",
+                  }}
+                >
                   <RNLinearGradient
                     start={{ x: 0, y: 0 }}
                     end={{ x: 1, y: 0 }}
@@ -194,7 +191,10 @@ const CustomTabBar = ({ state, descriptors, navigation }) => {
                 >
                   <Image
                     source={IconTab}
-                    style={[styles.iconTab, { tintColor: theme.colors.disable }]}
+                    style={[
+                      styles.iconTab,
+                      { tintColor: theme.colors.disable },
+                    ]}
                   />
                   <Text
                     fontFamily={theme.fonts.fontFamily.SourceSans3Bold}
@@ -253,7 +253,6 @@ const styles = StyleSheet.create({
   },
   myTabBarContainer: {
     position: "absolute",
-    height: 80,
     width,
     shadowOffset: {
       width: 0,
@@ -262,7 +261,8 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     elevation: 5,
     backgroundColor: "rgba(0,0,0,0)",
-    bottom: 5,
+    bottom: -1,
+    paddingBottom:10
   },
   button: {
     width: width / 4,

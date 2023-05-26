@@ -1,13 +1,14 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import AnimatedTabBar, { TabsConfigsType } from "curved-bottom-navigation-bar";
-import React from "react";
-import { Image, useWindowDimensions, View } from "react-native";
-import HomeScreen from "../screens/HomeScreen";
-import ProductScreen from "@screens/Bottom/ProductScreen";
 import DonHangScreen from "@screens/Bottom/DonHang";
 import NewsScreen from "@screens/Bottom/NewsScreen";
-import { Block, Text } from "@components";
+import ProductScreen from "@screens/Bottom/ProductScreen";
+import React from "react";
+import { Image, useWindowDimensions } from "react-native";
+import HomeScreen from "../screens/HomeScreen";
 import CustomTabBar from "./CustomTabBar";
+// import AnimatedTabBar, { TabsConfigsType } from "curved-bottom-navigation-bar";
+import { Block, Text } from "@components";
+import { getSize } from "@utils/responsive";
 
 const Tab = createBottomTabNavigator();
 
