@@ -2,34 +2,38 @@ import { icons, images } from "@assets";
 import { Block, GradientButton, Text } from "@components";
 import { theme } from "@theme";
 import React, { useState } from "react";
-import { Image, Pressable, TextInput } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  Pressable,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 import styles from "./styles";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import auth from "@react-native-firebase/auth";
+import { navigate } from "@navigation/RootNavigation";
 
 const ForgotPassword = (props) => {
   const { top } = useSafeAreaInsets();
   const [phone, setphone] = useState("");
   return (
-    <LinearGradient
-      colors={theme.colors.backgroundColor}
-      style={[styles.backgroundColor, { paddingTop: top + 20 }]}
-    >
+    <ImageBackground source={images.bg_container} style={styles.bg_container}>
       <Block alignCenter marginBottom={30}>
-        <Image source={images.logo} style={styles.logo} />
+        <Image source={images.logo_text} style={styles.logo} />
         <Text
           size={24}
           marginTop={42}
-          color={theme.colors.white}
+          color={theme.colors.color_register}
           fontType={"bold"}
         >
           Cấp lại mật khẩu
         </Text>
       </Block>
       <Block row alignCenter marginHorizontal={20} marginBottom={20}>
-        <Image source={icons.ic_phone} />
-        <Text color={theme.colors.white} size={18} marginLeft={14}>
+        <Image source={icons.ic_phone} style={styles.ic_phone} />
+        <Text color={theme.colors.black} size={18} marginLeft={14}>
           Số điện thoại
         </Text>
       </Block>
@@ -38,15 +42,15 @@ const ForgotPassword = (props) => {
         borderBottomWidth={1}
         alignCenter
         marginHorizontal={20}
-        borderColor={theme.colors.gray2}
+        borderColor={theme.colors.black}
         marginBottom={42}
         paddingBottom={10}
       >
-        <Text color={theme.colors.gray2}>(84+)</Text>
+        <Text color={theme.colors.black}>(84+)</Text>
         <Block
           height={24}
           width={1}
-          backgroundColor={theme.colors.gray2}
+          backgroundColor={theme.colors.black}
           marginHorizontal={8}
         />
         <TextInput
@@ -67,6 +71,7 @@ const ForgotPassword = (props) => {
             phone: phone,
           });
         }}
+        colors={theme.colors.gradient_red}
         style={styles.button}
         title="Xác nhận"
         styleTitle={styles.styleTitle}
@@ -75,14 +80,14 @@ const ForgotPassword = (props) => {
         <Text
           size={18}
           fontType={"bold"}
-          color={theme.colors.white}
+          color={theme.colors.color_register}
           marginTop={15}
           center
         >
           Quay Lại
         </Text>
       </Pressable>
-    </LinearGradient>
+    </ImageBackground>
   );
 };
 

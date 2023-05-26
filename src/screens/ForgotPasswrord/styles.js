@@ -2,18 +2,20 @@ import { theme } from "@theme";
 import { width } from "@utils/responsive";
 import { StyleSheet } from "react-native";
 export default StyleSheet.create({
-  backgroundColor: {
+  bg_container: {
     flex: 1,
+    justifyContent: "center",
   },
   logo: {
     width: width - 46 * 2,
-    height: 200,
     resizeMode: "contain",
+    bottom: 20,
   },
   input: {
     flex: 1,
     fontSize: 18,
-    color: theme.colors.white,
+    color: theme.colors.black,
+    fontFamily:theme.fonts.fontFamily.SourceSans3Bold
   },
   button: {
     paddingVertical: 10,
@@ -24,5 +26,8 @@ export default StyleSheet.create({
   styleTitle: {
     color: theme.colors.white,
     fontSize: 18,
+  },
+  ic_phone: {
+    tintColor: theme.colors.black,
   },
 });

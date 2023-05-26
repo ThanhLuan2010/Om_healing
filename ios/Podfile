@@ -4,7 +4,7 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '12.4'
 install! 'cocoapods', :deterministic_uuids => false
 
-target 'VinaFarm' do
+target 'OmHealling' do
   config = use_native_modules!
   pod 'GoogleUtilities', :modular_headers => true
   pod 'FirebaseCore', :modular_headers => true
@@ -38,7 +38,7 @@ target 'VinaFarm' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
 
-  target 'VinaFarmTests' do
+  target 'OmHeallingTests' do
     inherit! :complete
     # Pods for testing
   end

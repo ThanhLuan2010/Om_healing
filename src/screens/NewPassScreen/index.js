@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import React, { useState, useEffect } from "react";
 import { Block, GradientButton, Text } from "@components";
@@ -45,7 +46,7 @@ const NewPassScreen = (props) => {
         type: "success",
         description: message || "Đã đặt lại mật khẩu",
       });
-      reset(0,'LoginScreen')
+      reset(0, "LoginScreen");
     } else {
       showMessage({
         message: "Thất bại",
@@ -66,39 +67,42 @@ const NewPassScreen = (props) => {
   }, []);
 
   return (
-    <LinearGradient
-      colors={theme.colors.backgroundColor}
-      style={[styles.container, { paddingTop: top }]}
-    >
+    <ImageBackground source={images.bg_container} style={styles.bg_container}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <Block
           height={height + keyboardHeight}
           paddingBottom={keyboardHeight}
           flex
         >
-          <Block alignCenter marginBottom={30}>
-            <Image source={images.logo} style={styles.logo} />
+          <Block flex={1} />
+          <Block bottom={40} alignCenter>
+            <Image source={images.logo_text} style={styles.logo} />
             <Text
               marginTop={40}
               size={24}
               fontType={"bold"}
-              color={theme.colors.white}
+              color={theme.colors.color_register}
             >
               Nhập mật khẩu mới
             </Text>
           </Block>
           <Block marginTop={30} flex={1} marginHorizontal={20}>
             <Block row alignCenter marginBottom={20}>
-              <Image source={icons.ic_key} />
-              <Text marginLeft={11} color={theme.colors.white} size={18}>
-                Mật khẩu mới
+              <Image source={icons.ic_key} style={styles.ic_key} />
+              <Text
+                fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
+                marginLeft={11}
+                color={theme.colors.black}
+                size={18}
+              >
+                Mật khẩu
               </Text>
             </Block>
             <Block
               alignCenter
               row
               borderBottomWidth={1}
-              borderColor={theme.colors.gray2}
+              borderColor={theme.colors.black}
             >
               <TextInput
                 value={pass}
@@ -108,13 +112,19 @@ const NewPassScreen = (props) => {
               />
               <TouchableOpacity onPress={() => setSecurity(!security)}>
                 <Image
+                  style={styles.ic_eye}
                   source={security ? icons.ic_closeEye : icons.ic_openEye}
                 />
               </TouchableOpacity>
             </Block>
             <Block marginBottom={20} row alignCenter marginTop={30}>
-              <Image source={icons.ic_key} />
-              <Text marginLeft={11} color={theme.colors.white} size={18}>
+              <Image source={icons.ic_key} style={styles.ic_key} />
+              <Text
+                fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
+                marginLeft={11}
+                color={theme.colors.black}
+                size={18}
+              >
                 Nhập lại mật khẩu
               </Text>
             </Block>
@@ -122,7 +132,7 @@ const NewPassScreen = (props) => {
               alignCenter
               row
               borderBottomWidth={1}
-              borderColor={theme.colors.gray2}
+              borderColor={theme.colors.black}
             >
               <TextInput
                 value={Repass}
@@ -132,23 +142,25 @@ const NewPassScreen = (props) => {
               />
               <TouchableOpacity onPress={() => setSecurity_2(!security_2)}>
                 <Image
+                  style={styles.ic_eye}
                   source={security_2 ? icons.ic_closeEye : icons.ic_openEye}
                 />
               </TouchableOpacity>
             </Block>
           </Block>
-          <Block>
+          <Block flex justifyEnd>
             <GradientButton
               title="Lưu mật khẩu"
               onPress={onCreateNewPass}
               disable={pass && Repass ? false : true}
               style={[styles.titleButton]}
               styleTitle={styles.titleButtonSave}
+              colors={theme.colors.gradient_red}
             />
           </Block>
         </Block>
       </ScrollView>
-    </LinearGradient>
+    </ImageBackground>
   );
 };
 
@@ -158,7 +170,7 @@ const styles = StyleSheet.create({
   inputNumber: {
     flex: 1,
     fontSize: 18,
-    color: theme.colors.white,
+    color: theme.colors.black,
     fontWeight: "bold",
     height: 41,
   },
@@ -171,11 +183,22 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: width - 46 * 2,
-    height: 200,
     resizeMode: "contain",
+    marginBottom: 40,
   },
   container: { flex: 1 },
   titleButtonSave: {
     fontSize: 18,
+  },
+  ic_key: {
+    tintColor: theme.colors.black,
+    width: 24,
+    height: 24,
+  },
+  ic_eye: {
+    tintColor: theme.colors.black,
+  },
+  bg_container: {
+    flex: 1,
   },
 });

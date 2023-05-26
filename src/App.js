@@ -23,15 +23,14 @@ const App = () => {
   const { isLoading } = useSelector(commonSelect);
   const [isLoadingView, setisLoadingView] = useState(true);
   const { isUpdate, progres } = useSelector(codePushSelect);
-  console.log("=====progress====", progres);
   useEffect(() => {
     messaging().requestPermission();
     setTimeout(() => {
       SplashScreen.hide();
-    }, 1000);
+    }, 10);
     setTimeout(() => {
       setisLoadingView(false);
-    }, 2000);
+    }, 20);
     messaging().onMessage(async (remoteMessage) => {
       const { notification } = remoteMessage;
       showMessage({
