@@ -7,6 +7,7 @@ import { showAlert } from "@utils/navigator";
 import { width } from "@utils/responsive";
 import React, { useEffect, useState } from "react";
 import {
+  View,
   Image,
   KeyboardAvoidingView,
   Pressable,
@@ -14,6 +15,7 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import { showMessage } from "react-native-flash-message";
 import LinearGradient from "react-native-linear-gradient";
@@ -30,6 +32,10 @@ import {
   userSelect,
 } from "../../store/slices/user";
 
+import { assets } from "../../../react-native.config";
+import { bottom } from "@screens/Bottom";
+import { block } from "react-native-reanimated";
+import { rows } from "deprecated-react-native-prop-types/DeprecatedTextInputPropTypes";
 export default function LoginScreen({ navigation }) {
   useEffect(() => {
     dispatch(setIsLoading(false));
@@ -104,33 +110,27 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <LinearGradient
-      style={[styles.backgroundColor, { paddingTop: top }]}
-      colors={theme.colors.backgroundColor}
-    >
+    <ImageBackground source={images.login} style={styles.login}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <KeyboardAvoidingView behavior="padding">
           <Block
             marginBottom={30}
+            marginTop={10}
             style={{ flex: 2 }}
             justifyCenter
             alignCenter
           >
             <Image source={images.logo} style={styles.logo} />
-            <Text
-              marginTop={32}
-              size={24}
-              fontType={"bold"}
-              color={theme.colors.white}
-            >
+
+            <Text size={24} fontType={"bold"} color={theme.colors.redesign}>
               Đăng nhập
             </Text>
           </Block>
           <Block marginHorizontal={20} style={{ flex: 3 }}>
             <Block>
               <Block row alignCenter marginBottom={20}>
-                <Image source={icons.ic_phone} style={styles.ic_phone} />
-                <Text size={18} color={theme.colors.white} marginLeft={14}>
+                <Image source={images.ic_phone} style={styles.ic_phone} />
+                <Text size={18} color={theme.colors.black} marginLeft={14}>
                   Số điện thoại
                 </Text>
               </Block>
@@ -156,8 +156,8 @@ export default function LoginScreen({ navigation }) {
                 />
               </Block>
               <Block row alignCenter marginTop={30} marginBottom={20}>
-                <Image source={icons.ic_key} style={styles.ic_phone} />
-                <Text marginLeft={14} size={18} color={theme.colors.white}>
+                <Image source={images.ic_key} style={styles.ic_phone} />
+                <Text marginLeft={14} size={18} color={theme.colors.black}>
                   Mật khẩu
                 </Text>
               </Block>
@@ -189,23 +189,27 @@ export default function LoginScreen({ navigation }) {
                     }}
                     styleCheck={styles.checkBox}
                   />
-                  <Text marginLeft={8} color={theme.colors.white} size={13}>
+                  <Text marginLeft={8} color={theme.colors.black} size={13}>
                     Ghi nhớ đăng nhập
                   </Text>
                 </Block>
                 <Pressable
                   onPress={() => navigation.navigate("ForgotPassword")}
                 >
-                  <Text size={13} color={theme.colors.white}>
+                  <Text size={13} color={theme.colors.black}>
                     Quên mật khẩu?
                   </Text>
                 </Pressable>
               </Block>
             </Block>
-            <Block flex={1} justifyCenter>
+            <Block justifyCenter flex={2}>
               <GradientButton
                 title="Đăng Nhập"
-                style={styles.button}
+                style={{
+                  backgroundColor: theme.colors.redesign,
+                  borderRadius: 10,
+                  alignItems: "center",
+                }}
                 styleTitle={styles.titleButton}
                 disable={phone && password ? false : true}
                 onPress={onLogin}
@@ -214,7 +218,7 @@ export default function LoginScreen({ navigation }) {
                 style={styles.btnRegister}
                 onPress={() => navigate("RegisterScreen")}
               >
-                <Text size={18} color={theme.colors.white} center>
+                <Text size={18} color={theme.colors.redesign} center>
                   Đăng Kí
                 </Text>
               </Pressable>
@@ -222,7 +226,7 @@ export default function LoginScreen({ navigation }) {
           </Block>
         </KeyboardAvoidingView>
       </ScrollView>
-    </LinearGradient>
+    </ImageBackground>
   );
 }
 
@@ -232,8 +236,12 @@ const styles = StyleSheet.create({
   },
   logo: {
     width: width - 46 * 2,
+    marginTop: 80,
     height: 200,
     resizeMode: "contain",
+  },
+  login: {
+    flex: 1,
   },
   ic_phone: {
     width: 19,
@@ -243,7 +251,7 @@ const styles = StyleSheet.create({
   inputNumber: {
     flex: 1,
     fontSize: 18,
-    color: theme.colors.white,
+    color: theme.colors.black,
     fontFamily: theme.fonts.fontFamily.SourceSans3Regular,
     paddingVertical: 0,
   },
@@ -251,7 +259,7 @@ const styles = StyleSheet.create({
     width: 27,
     height: 27,
     borderWidth: 1,
-    borderColor: theme.colors.white,
+    borderColor: theme.colors.redesign,
   },
   button: {
     alignItems: "center",
@@ -265,5 +273,6 @@ const styles = StyleSheet.create({
   },
   titleButton: {
     fontSize: 18,
+    alignSelf: "center",
   },
 });
