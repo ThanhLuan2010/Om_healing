@@ -171,7 +171,11 @@ export default function LoginScreen({ navigation }) {
               <GradientButton
                 colors={theme.colors.gradient_red}
                 title="Đăng Ký"
-                style={styles.button}
+                style={{
+                  backgroundColor: theme.colors.redesign,
+                  borderRadius: 10,
+                  alignItems: "center",
+                }}
                 styleTitle={styles.titleButton}
                 onPress={onRegister}
                 disable={phone && password && rePassword ? false : true}

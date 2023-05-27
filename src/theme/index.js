@@ -11,6 +11,7 @@ export const createTextStyle = (textSize, typeFont = "regular") => ({
 
 export const theme = {
   colors: {
+    redesign: "#800000",
     transparent: "transparent",
     text: "#242424",
     background: "#f5f5f5",
@@ -45,7 +46,7 @@ export const theme = {
     stroke: "#0073e6",
     blue_txt: "#2CA0D9",
     borderColor: "#F2F2F2",
-    backgroundColor: ["#0E833C", "#042F15"],
+    // backgroundColor: ["#0E833C", "#042F15"], //replace imagebackground
     blurGreen: "#C2E0C9",
     green: "#00FF19",
     greenBlur: "#C3FFD133",

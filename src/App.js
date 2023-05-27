@@ -27,10 +27,10 @@ const App = () => {
     messaging().requestPermission();
     setTimeout(() => {
       SplashScreen.hide();
-    }, 1000);
+    }, 10);
     setTimeout(() => {
       setisLoadingView(false);
-    }, 2000);
+    }, 20);
     messaging().onMessage(async (remoteMessage) => {
       const { notification } = remoteMessage;
       showMessage({
