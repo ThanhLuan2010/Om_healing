@@ -59,7 +59,7 @@ export class LoadingScreenChild extends Component {
       <>
         <LinearGradient
           style={[styles.backgroundColor, { paddingTop: 40 }]}
-          colors={theme.colors.backgroundColor}
+          colors={theme.colors.gradient_red}
         >
           <Image source={images.loadingBg} style={styles.bg} />
           <ActivityIndicator

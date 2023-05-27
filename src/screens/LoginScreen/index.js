@@ -7,18 +7,16 @@ import { showAlert } from "@utils/navigator";
 import { width } from "@utils/responsive";
 import React, { useEffect, useState } from "react";
 import {
-  View,
   Image,
+  ImageBackground,
   KeyboardAvoidingView,
   Pressable,
   ScrollView,
   StyleSheet,
   TextInput,
   TouchableOpacity,
-  ImageBackground,
 } from "react-native";
 import { showMessage } from "react-native-flash-message";
-import LinearGradient from "react-native-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
 import { baseQuery } from "../../api/baseQuery";
@@ -32,10 +30,6 @@ import {
   userSelect,
 } from "../../store/slices/user";
 
-import { assets } from "../../../react-native.config";
-import { bottom } from "@screens/Bottom";
-import { block } from "react-native-reanimated";
-import { rows } from "deprecated-react-native-prop-types/DeprecatedTextInputPropTypes";
 export default function LoginScreen({ navigation }) {
   useEffect(() => {
     dispatch(setIsLoading(false));
@@ -126,7 +120,7 @@ export default function LoginScreen({ navigation }) {
               Đăng nhập
             </Text>
           </Block>
-          <Block marginHorizontal={20} style={{ flex: 3 }}>
+          <Block marginHorizontal={20}>
             <Block>
               <Block row alignCenter marginBottom={20}>
                 <Image source={images.ic_phone} style={styles.ic_phone} />
@@ -202,7 +196,7 @@ export default function LoginScreen({ navigation }) {
                 </Pressable>
               </Block>
             </Block>
-            <Block justifyCenter flex={2}>
+            <Block justifyCenter >
               <GradientButton
                 title="Đăng Nhập"
                 style={{
