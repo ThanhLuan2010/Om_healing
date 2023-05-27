@@ -13,7 +13,13 @@ import styles from "./styles";
 import { navigate } from "@navigation/RootNavigation";
 
 const Header = (props) => {
-  return <HeaderCommon {...props} />;
+  if (props.type === "Home") {
+    return <HeaderCommon {...props} />;
+  } else if (props.type === "LinearBackground") {
+    return <HeaderLinearBackground {...props} />;
+  } else {
+    return <HeaderCommon {...props} />;
+  }
 };
 const HeaderCommon = ({
   title,
@@ -37,56 +43,103 @@ const HeaderCommon = ({
   };
 
   return (
-    <Block
-      row
-      alignCenter
-      paddingHorizontal={20}
-      paddingTop={top + 10}
-      paddingVertical={12}
-      backgroundColor={theme.colors.white}
-      style={[style, styles.shadow]}
+    <LinearGradient
+      colors={theme.colors.gradient_red}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+      style={{
+        paddingHorizontal: 20,
+        paddingTop: top + 10,
+        paddingVertical: 15,
+        flexDirection: "row",
+      }}
     >
-      <Block width={width / 6}>
-        {canGoBack && (
-          <Pressable onPress={_onBack} style={[styles.btnBack]}>
-            <Image
-              source={images.ic_left}
-              resizeMode="contain"
-              style={{
-                ...styles.iconBack,
-                tintColor: "#10A31E",
-              }}
-            />
-            <Text
-              marginLeft={5}
-              color={blackTheme ? theme.colors.black : theme.colors.white}
-            >
-              Back
-            </Text>
-          </Pressable>
-        )}
+      <Block>
+        <Block width={width / 6}>
+          {canGoBack && (
+            <Pressable onPress={_onBack} style={[styles.btnBack]}>
+              <Image
+                source={images.ic_left}
+                resizeMode="contain"
+                style={{
+                  ...styles.iconBack,
+                  tintColor: "#10A31E",
+                }}
+              />
+              <Text
+                marginLeft={5}
+                color={blackTheme ? theme.colors.black : theme.colors.white}
+                style={titleStyle}
+              >
+                {title}
+              </Text>
+            </Pressable>
+          )}
+        </Block>
+
+        <Block alignEnd width={width / 6}>
+          {search}
+          {rightComponent ? rightComponent : null}
+        </Block>
       </Block>
-      <Text
-        color={"#10A31E"}
-        flex
-        size={24}
-        fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
-        center
-        style={titleStyle}
+    </LinearGradient>
+  );
+};
+
+const HeaderLinearBackground = () => {
+  const { top } = useSafeAreaInsets();
+  return (
+    <LinearGradient
+      colors={theme.colors.gradient_red}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 0 }}
+    >
+      <Block
+        row
+        alignCenter
+        paddingHorizontal={20}
+        paddingTop={top + 10}
+        paddingVertical={12}
       >
-        {title}
-      </Text>
-      <Block alignEnd width={width / 6}>
-        {search}
-        {rightComponent ? (
-          rightComponent
-        ) : (
-          <TouchableOpacity onPress={()=>navigate('ChatScreen')}>
-            <Image source={images.ic_quize} style={styles.icQuize} />
+        <Block flex>
+          <Block
+            width={43}
+            height={43}
+            radius={21}
+            backgroundColor={theme.colors.blur_Red}
+            borderWidth={1}
+            borderColor={theme.colors.white}
+            alignCenter
+            justifyCenter
+          >
+            <TouchableOpacity>
+              <Image source={images.ic_bell} style={styles.ic_icon} />
+            </TouchableOpacity>
+          </Block>
+        </Block>
+
+        <Block row alignCenter>
+          <Block
+            width={43}
+            height={43}
+            radius={21}
+            borderWidth={1}
+            borderColor={theme.colors.white}
+            alignCenter
+            justifyCenter
+            backgroundColor={theme.colors.blur_Red}
+            marginRight={18}
+          >
+            <TouchableOpacity>
+              <Image source={images.ic_user} style={styles.ic_icon} />
+            </TouchableOpacity>
+          </Block>
+          <TouchableOpacity>
+            <Image source={images.ic_setting} style={styles.ic_icon} />
           </TouchableOpacity>
-        )}
+        </Block>
       </Block>
-    </Block>
+    </LinearGradient>
   );
 };
 

@@ -57,9 +57,10 @@ export const theme = {
     gradient_opYellow: ["#FFF6DF", "#FFEAC2"],
     milk_orange: "#FFEAC2",
     disable: "#A4A4A4",
-    blur_red: "#F3D7D7",
+   
     orange: "#B85902",
     gray: "#727272",
+    blur_Red:"#7D4646"
   },
 
   fonts: {

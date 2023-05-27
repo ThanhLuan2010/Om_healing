@@ -8,6 +8,7 @@ import DonHangScreen from "@screens/Bottom/DonHang";
 import NewsScreen from "@screens/Bottom/NewsScreen";
 import { Block, Text } from "@components";
 import CustomTabBar from "./CustomTabBar";
+import SellComponent from "@components/SellComponent";
 
 const Tab = createBottomTabNavigator();
 
@@ -27,8 +28,8 @@ export default function MyTabs() {
       />
       <Tab.Screen
         options={{ title: "Bán hàng" }}
-        name="ProductScreen"
-        component={ProductScreen}
+        name="SellComponent"
+        component={SellComponent}
       />
       <Tab.Screen
         options={{ title: "Khoá học" }}

@@ -25,6 +25,18 @@ export const data = [
     size: 16,
     price_Url: "https://omhealing.com.vn/san-pham/",
   },
+  {
+    image: images.bg_blur1,
+    name: "Chuông khắc ",
+    size: 16,
+    price_Url: "https://omhealing.com.vn/san-pham/",
+  },
+  {
+    image: images.bg_blur1,
+    name: "Chuông khắc ",
+    size: 16,
+    price_Url: "https://omhealing.com.vn/san-pham/",
+  },
 ];
 const Card = (props) => {
   return (
