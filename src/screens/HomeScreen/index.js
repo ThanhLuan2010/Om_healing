@@ -1,21 +1,19 @@
+import { images } from "@assets";
+import { Block, Text } from "@components";
+import CourseComponent from "@components/CourseComponent";
+import NewsComponent from "@components/NewsComponent";
+import { theme } from "@theme";
+import { getSize, width } from "@utils/responsive";
+import React, { useRef, useState } from "react";
 import {
   Image,
-  StyleSheet,
-  TouchableOpacity,
-  Dimensions,
-  ImageBackground,
   ScrollView,
+  StyleSheet,
+  TouchableOpacity
 } from "react-native";
-import React, { useState, useRef } from "react";
-import { Block, Text } from "@components";
-import { theme } from "@theme";
-import { images } from "@assets";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import Carousel from "react-native-reanimated-carousel";
-import { getSize, width } from "@utils/responsive";
-import CourseComponent from "@components/CourseComponent";
 import LinearGradient from "react-native-linear-gradient";
-import NewsComponent from "@components/NewsComponent";
+import Carousel from "react-native-reanimated-carousel";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const dataCarousel = [
   {
@@ -55,7 +53,24 @@ const dataListProduct = [
     id: 6,
   },
 ];
-const dataCourse = [{}];
+const dataCourse = [{
+  image: images.course,
+  title:
+    "[Event] Buổi lễ ký kết hợp tác độc quyền giữa Master Santa Ratna Shakya và OM Himalayas",
+  content:
+    "Sáng chủ nhật ngày 14-5-2023 vừa qua tại Trụ sở Om Himalayas: 256 Pasteur, Phường Võ Thị Sáu, Quận 3, TP.HCM đã diễn ra buổi ký kết đặc biệt giữa ",
+  time: "16 tháng 5, 2023",
+  more: "Xem thêm",
+},
+{
+  image: images.course,
+  title:
+    "[Event] Buổi lễ ký kết hợp tác độc quyền giữa Master Santa Ratna Shakya và OM Himalayas",
+  content:
+    "Sáng chủ nhật ngày 14-5-2023 vừa qua tại Trụ sở Om Himalayas: 256 Pasteur, Phường Võ Thị Sáu, Quận 3, TP.HCM đã diễn ra buổi ký kết đặc biệt giữa ",
+  time: "16 tháng 5, 2023",
+  more: "Xem thêm",
+},];
 const HomeScreen = () => {
   const carouselRef = useRef();
   const [snapIndex, SetSnapIndex] = useState(0);
@@ -66,47 +81,33 @@ const HomeScreen = () => {
       </Block>
     );
   };
-  const renderListProduct = (item, index) => {
+  const renderListProduct = () => {
     return (
-      <Block key={index} style={styles.container_2}>
-        <Block style={styles.column}>
-          {dataListProduct.slice(0, 3).map((item) => (
-            <TouchableOpacity
-              onPress={() => console.log("======", item.id)}
-              key={item.id}
-              style={styles.item}
-            >
-              <Image source={item.image} style={styles.image} />
-              <Text style={styles.titleList}>{item.title}</Text>
-            </TouchableOpacity>
-          ))}
-        </Block>
-        <Block style={styles.column}>
-          {dataListProduct.slice(3, 6).map((item) => (
-            <TouchableOpacity
-              onPress={() => console.log("======", item.id)}
-              key={item.id}
-              style={styles.item}
-            >
-              <Image source={item.image} style={styles.image} />
-              <Text style={styles.titleList}>{item.title}</Text>
-            </TouchableOpacity>
-          ))}
-        </Block>
+      <Block wrap marginHorizontal={20} space={'between'} row>
+        {dataListProduct.map((item, index) => (
+          <TouchableOpacity
+            onPress={() => { }}
+            key={index}
+            style={styles.item}
+          >
+            <Image source={item.image} style={styles.image} />
+            <Text style={styles.titleList}>{item.title}</Text>
+          </TouchableOpacity>
+        ))}
       </Block>
     );
   };
 
-  const renderCourse = () => {
-    return <CourseComponent />;
+  const renderCourse = (item, index) => {
+    return <CourseComponent item={item} index={index} />;
   };
 
-  const renderNews = () => {
-    return <NewsComponent />;
+  const renderNews = (item, index) => {
+    return <NewsComponent item={item} index={index} />;
   };
   return (
-    <Block>
-      <ScrollView>
+    <Block backgroundColor={theme.colors.background} flex>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <HeaderHome />
         <Block
           style={styles.carouselShadow}
@@ -175,43 +176,44 @@ const HomeScreen = () => {
           </Block>
         </Block>
         {dataCourse.map(renderCourse)}
-
         <Block alignCenter>
           <Image source={images.heal} style={styles.heal} />
-          <Block top={16} flex absolute width={178} right={20}>
-            <Text
-              marginBottom={4}
-              color={theme.colors.color_register}
-              size={16}
-              fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
-            >
-              Trị liệu tại om healing
-            </Text>
-            <Text
-              numberOfLines={3}
-              style={styles.txtHeal}
-              size={10}
-              color={theme.colors.white}
-            >
-              Hãy để Om Healing giúp bạn thư giãn, giải tỏa những căng thẳng và
-              cân bằng lại năng lượng cho một cuộc sống chất lượng hơn.
-            </Text>
-            <TouchableOpacity>
-              <LinearGradient
-                start={{ x: 0, y: 0 }}
-                end={{ x: 1, y: 0 }}
-                colors={theme.colors.gradient_red}
-                style={styles.btnBooking}
+          <Block absolute alignSelf={'center'} width={width - 40}>
+            <Block marginTop={16} marginRight={10} width={'50%'} alignSelf={'flex-end'}>
+              <Text
+                marginBottom={4}
+                color={theme.colors.color_register}
+                size={16}
+                fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
               >
-                <Text
-                  size={12}
-                  color={theme.colors.white}
-                  fontFamily={theme.fonts.fontFamily.SourceSans3Regular}
+                Trị liệu tại om healing
+              </Text>
+              <Text
+                numberOfLines={3}
+                style={styles.txtHeal}
+                size={10}
+                color={theme.colors.white}
+              >
+                Hãy để Om Healing giúp bạn thư giãn, giải tỏa những căng thẳng và
+                cân bằng lại năng lượng cho một cuộc sống chất lượng hơn.
+              </Text>
+              <TouchableOpacity>
+                <LinearGradient
+                  start={{ x: 0, y: 0 }}
+                  end={{ x: 1, y: 0 }}
+                  colors={theme.colors.gradient_red}
+                  style={styles.btnBooking}
                 >
-                  Booking
-                </Text>
-              </LinearGradient>
-            </TouchableOpacity>
+                  <Text
+                    size={12}
+                    color={theme.colors.white}
+                    fontFamily={theme.fonts.fontFamily.SourceSans3Regular}
+                  >
+                    Booking
+                  </Text>
+                </LinearGradient>
+              </TouchableOpacity>
+            </Block>
           </Block>
         </Block>
         <Block
@@ -242,9 +244,9 @@ const HomeScreen = () => {
         </Block>
         {dataCourse.map(renderNews)}
         <Block alignCenter marginVertical={30}>
-          <Block>
-            <Image source={images.heal} style={styles.heal} />
-            <Block left={27} top={26} flex absolute width={178}>
+          <Image source={images.heal} style={styles.heal} />
+          <Block width={width - 40} paddingTop={10} flex absolute >
+            <Block width={'50%'} alignSelf={'flex-end'} marginRight={10}>
               <Text
                 marginBottom={4}
                 color={theme.colors.color_register}
@@ -380,25 +382,17 @@ const styles = StyleSheet.create({
       height: 3,
     },
   },
-
-  container_2: {
-    flex: 1,
-    flexDirection: "row",
-    marginHorizontal: 10,
-  },
-  column: {
-    flex: 1,
-  },
   item: {
     marginBottom: 20,
     alignItems: "center",
     justifyContent: "center",
+    width: width / 2 - 30,
   },
   image: {
-    width: getSize.m(168),
-    height: 84,
     resizeMode: "cover",
+    height: getSize.v(84),
     borderRadius: 10,
+    width: '100%'
   },
   titleList: {
     position: "absolute",
@@ -421,5 +415,11 @@ const styles = StyleSheet.create({
     marginTop: 5,
     right: 15,
   },
-  heal: { width: getSize.m(350), borderRadius: 10 },
+  heal: {
+    marginHorizontal: 20,
+    height: getSize.v(178),
+    resizeMode: 'cover',
+    width: width - 40,
+    borderRadius: 6
+  },
 });

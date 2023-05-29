@@ -1,11 +1,11 @@
 import { theme } from "@theme";
+import { width } from "@utils/responsive";
 import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   imgCourse: {
     borderRadius: 4,
-    width: 139,
-    height: 139,
-    // resizeMode:"contain"
+    width: width / 3,
+    height: width / 3,
   },
   shadow: {
     backgroundColor: theme.colors.white,
