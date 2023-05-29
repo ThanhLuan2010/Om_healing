@@ -11,6 +11,15 @@ import {
   StyleSheet,
   TouchableOpacity
 } from "react-native";
+import React, { useState, useRef } from "react";
+import { Block, Header, Text, TopNav } from "@components";
+import { theme } from "@theme";
+import { images } from "@assets";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Carousel from "react-native-reanimated-carousel";
+import { getSize, width } from "@utils/responsive";
+import CourseComponent from "@components/CourseComponent";
+
 import LinearGradient from "react-native-linear-gradient";
 import Carousel from "react-native-reanimated-carousel";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -106,9 +115,9 @@ const HomeScreen = () => {
     return <NewsComponent item={item} index={index} />;
   };
   return (
-    <Block backgroundColor={theme.colors.background} flex>
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <HeaderHome />
+    <Block>
+      <Header type="LinearBackground" />
+      <ScrollView>
         <Block
           style={styles.carouselShadow}
           marginVertical={30}
@@ -274,52 +283,6 @@ const HomeScreen = () => {
 };
 
 export default HomeScreen;
-const HeaderHome = (props) => {
-  const { top } = useSafeAreaInsets();
-  return (
-    <Block
-      row
-      alignCenter
-      paddingHorizontal={21}
-      paddingTop={top + 10}
-      paddingVertical={12}
-      backgroundColor={theme.colors.white}
-      style={styles.shadow}
-      space={"between"}
-    >
-      <Block
-        width={43}
-        height={43}
-        borderWidth={1}
-        backgroundColor={theme.colors.blur_red}
-        alignCenter
-        justifyCenter
-        radius={21}
-        borderColor={theme.colors.color_register}
-      >
-        <TouchableOpacity>
-          <Image source={images.ic_bell} style={styles.ic_setting} />
-        </TouchableOpacity>
-      </Block>
-      <Block row alignCenter>
-        <Block
-          marginHorizontal={18}
-          width={43}
-          height={43}
-          borderWidth={1}
-          backgroundColor={theme.colors.blur_red}
-          alignCenter
-          justifyCenter
-          radius={21}
-          borderColor={theme.colors.color_register}
-        >
-          <Image source={images.ic_user} style={styles.ic_setting} />
-        </Block>
-        <Image source={images.ic_setting} style={styles.ic_setting} />
-      </Block>
-    </Block>
-  );
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -339,6 +302,8 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     resizeMode: "contain",
+    tintColor: theme.colors.white,
+    marginLeft: 18,
   },
   napLeft: {
     width: 21,

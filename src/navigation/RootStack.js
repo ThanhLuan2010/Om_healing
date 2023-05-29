@@ -46,7 +46,8 @@ export default function MainContainer() {
     config: PATH_SCREENS,
   };
   // const { isLoggedIn } = useSelector(userSelect);
-  const { isLoggedIn } = useSelector(userSelect);
+  // const { isLoggedIn } = useSelector(userSelect);
+  const isLoggedIn = true
   return (
     <NavigationContainer ref={navigationRef} linking={linking}>
       <StatusBar

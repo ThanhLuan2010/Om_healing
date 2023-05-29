@@ -6,6 +6,7 @@ import React from "react";
 import { Image, useWindowDimensions } from "react-native";
 import HomeScreen from "../screens/HomeScreen";
 import CustomTabBar from "./CustomTabBar";
+import SellComponent from "@components/SellComponent";
 // import AnimatedTabBar, { TabsConfigsType } from "curved-bottom-navigation-bar";
 import { Block, Text } from "@components";
 import { getSize } from "@utils/responsive";
@@ -28,8 +29,8 @@ export default function MyTabs() {
       />
       <Tab.Screen
         options={{ title: "Bán hàng" }}
-        name="ProductScreen"
-        component={ProductScreen}
+        name="SellComponent"
+        component={SellComponent}
       />
       <Tab.Screen
         options={{ title: "Khoá học" }}

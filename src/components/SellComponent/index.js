@@ -1,6 +1,6 @@
-import { Image, ScrollView, StyleSheet } from "react-native";
+import { Image, ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import React, { useState } from "react";
-import { Block, Text } from "@components";
+import { Block, Text, Header } from "@components";
 import { theme } from "@theme";
 import TopTab from "./TopTab";
 import { images } from "@assets";
@@ -14,8 +14,8 @@ const SellComponent = () => {
     return <SellProductComponent dataProduct={dataProduct} />;
   };
   return (
-    <Block backgroundColor={theme.colors.milk_orange} flex>
-      <Header />
+    <Block backgroundColor={theme.colors.milk_orange}>
+      <Header type="LinearBackground" />
       <ScrollView>
         <TopTab onChangTab={(id) => setTabTop(id)} indexTab={tabTop} />
         <Block marginBottom={31}>{dataProduct.map(renderProduct)}</Block>
@@ -25,12 +25,5 @@ const SellComponent = () => {
 };
 
 export default SellComponent;
-const Header = () => {
-  return (
-    <Block height={100} backgroundColor={"red"}>
-      <Text>sssss</Text>
-    </Block>
-  );
-};
 
 const styles = StyleSheet.create({});

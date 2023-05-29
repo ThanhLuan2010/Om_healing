@@ -1,3 +1,4 @@
+import { theme } from "@theme";
 import { getSize } from "@utils/responsive";
 import { StyleSheet } from "react-native";
 
@@ -29,7 +30,7 @@ export default StyleSheet.create({
   icQuize: {
     width: getSize.s(26),
     height: getSize.s(31),
-    resizeMode: 'stretch',
+    resizeMode: "stretch",
   },
   shadow: {
     elevation: 5,
@@ -39,5 +40,11 @@ export default StyleSheet.create({
       width: 0,
       height: 2,
     },
+  },
+  ic_icon: {
+    width: 20,
+    height: 20,
+    resizeMode: "contain",
+    tintColor: theme.colors.white,
   },
 });

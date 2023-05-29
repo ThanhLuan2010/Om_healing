@@ -1,6 +1,6 @@
 import { baseQuery } from "@api/baseQuery";
 import { icons, images } from "@assets";
-import { Block, GradientButton, HeaderHome, Text, TopNav } from "@components";
+import { Block, GradientButton, Header, Text, TopNav } from "@components";
 import { navigate } from "@navigation/RootNavigation";
 import { orderSelect, setListOrder } from "@store/slices/order";
 import { theme } from "@theme";
@@ -130,8 +130,7 @@ const DonHangScreen = () => {
 
   return (
     <Block flex backgroundColor={theme.colors.white}>
-      <HeaderHome />
-      <TopNav />
+      <Header type="LinearBackground" />
       <ScrollView
         contentContainerStyle={{ flexGrow: 1 }}
         showsVerticalScrollIndicator={false}
@@ -174,7 +173,7 @@ const DonHangScreen = () => {
                     Mua lại
                   </Text>
                 </Block>
-                <TouchableOpacity onPress={()=>navigate('ProductScreen')}>
+                <TouchableOpacity onPress={() => navigate("ProductScreen")}>
                   <Block row alignCenter>
                     <Text
                       fontFamily={theme.fonts.fontFamily.SourceSans3Regular}
