@@ -20,37 +20,33 @@ const dataCourse = [
   },
 ];
 
-const CourseComponent = () => {
+const CourseComponent = ({ item, index }) => {
   return (
-    <Block>
-      {dataCourse.map((item, index) => (
-        <Block
-          key={index}
-          padding={8}
-          style={styles.shadow}
-          row
-          marginBottom={20}
-          marginHorizontal={20}
+    <Block
+      key={index}
+      padding={8}
+      style={styles.shadow}
+      row
+      marginBottom={20}
+      marginHorizontal={20}
+    >
+      <Image style={styles.imgCourse} source={item.image} />
+      <Block marginLeft={18} flex={1}>
+        <Text
+          color={theme.colors.black}
+          size={16}
+          fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
         >
-          <Image style={styles.imgCourse} source={item.image} />
-          <Block marginLeft={18} flex={1}>
-            <Text
-              color={theme.colors.black}
-              size={16}
-              fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
-            >
-              {item.title}
-            </Text>
-            <Text
-              color={theme.colors.gray}
-              fontFamily={theme.fonts.fontFamily.SourceSans3Regular}
-              size={10}
-            >
-              {item.content}
-            </Text>
-          </Block>
-        </Block>
-      ))}
+          {item.title}
+        </Text>
+        <Text
+          color={theme.colors.gray}
+          fontFamily={theme.fonts.fontFamily.SourceSans3Regular}
+          size={10}
+        >
+          {item.content}
+        </Text>
+      </Block>
     </Block>
   );
 };
