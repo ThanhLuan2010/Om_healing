@@ -25,7 +25,7 @@ PODS:
     - AppCenter/Core (= 4.4.3)
   - Base64 (1.1.2)
   - boost (1.76.0)
-  - BVLinearGradient (2.6.2):
+  - BVLinearGradient (2.7.3):
     - React-Core
   - CocoaAsyncSocket (7.6.5)
   - CodePush (7.1.0):
@@ -479,7 +479,7 @@ PODS:
     - React-Core
   - react-native-render-html (6.3.4):
     - React-Core
-  - react-native-safe-area-context (4.5.3):
+  - react-native-safe-area-context (4.6.0):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
@@ -567,7 +567,7 @@ PODS:
     - React
   - RNAppleAuthentication (2.2.2):
     - React-Core
-  - RNCAsyncStorage (1.18.1):
+  - RNCAsyncStorage (1.18.2):
     - React-Core
   - RNCClipboard (1.11.2):
     - React-Core
@@ -597,7 +597,7 @@ PODS:
     - FirebaseCoreExtension (= 9.6.0)
     - React-Core
     - RNFBApp
-  - RNGestureHandler (2.10.1):
+  - RNGestureHandler (2.12.0):
     - React-Core
   - RNGoogleSignin (8.2.2):
     - GoogleSignIn (~> 6.2)
@@ -638,7 +638,7 @@ PODS:
     - React-RCTText
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.20.0):
+  - RNScreens (3.21.1):
     - React-Core
     - React-RCTImage
   - RNSVG (13.9.0):
@@ -946,7 +946,7 @@ SPEC CHECKSUMS:
   AppCenterReactNativeShared: f395caeabde0dc3a11609dbcb737d0f14cd40e79
   Base64: cecfb41a004124895a7bcee567a89bae5a89d49b
   boost: a7c83b31436843459a1961bfd74b96033dc77234
-  BVLinearGradient: 34a999fda29036898a09c6a6b728b0b4189e1a44
+  BVLinearGradient: fbe308a1d19a8133f69e033abc85d8008644f5e3
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   CodePush: dce1b253fde81078249ea9cd4b948e4ac7b761a9
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -1005,7 +1005,7 @@ SPEC CHECKSUMS:
   react-native-config: 86038147314e2e6d10ea9972022aa171e6b1d4d8
   react-native-netinfo: ccbe1085dffd16592791d550189772e13bf479e2
   react-native-render-html: 984dfe2294163d04bf5fe25d7c9f122e60e05ebe
-  react-native-safe-area-context: b8979f5eda6ed5903d4dbc885be3846ea3daa753
+  react-native-safe-area-context: eb0b9284834d1173db8de53ef32dde3d608ee533
   react-native-simple-toast: 8ee5d23f0b92b935ab7434cdb65159ce12dfb4b7
   react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   react-native-video: c26780b224543c62d5e1b2a7244a5cd1b50e8253
@@ -1024,7 +1024,7 @@ SPEC CHECKSUMS:
   ReactCommon: de55f940495d7bf87b5d7bf55b5b15cdd50d7d7b
   ReactNativeART: 78edc68dd4a1e675338cd0cd113319cf3a65f2ab
   RNAppleAuthentication: 0571c08da8c327ae2afc0261b48b4a515b0286a6
-  RNCAsyncStorage: b90b71f45b8b97be43bc4284e71a6af48ac9f547
+  RNCAsyncStorage: ddc4ee162bfd41b0d2c68bf2d95acd81dd7f1f93
   RNCClipboard: 3f0451a8100393908bea5c5c5b16f96d45f30bfc
   RNCPushNotificationIOS: 64218f3c776c03d7408284a819b2abfda1834bc8
   RNDateTimePicker: 65e1d202799460b286ff5e741d8baf54695e8abd
@@ -1034,11 +1034,11 @@ SPEC CHECKSUMS:
   RNFBAuth: 4accb7c62398bf0399b41766d817ffd28a34575a
   RNFBDatabase: 4b80414bd241e859cb9d9aa5ac2e5590343ac13e
   RNFBMessaging: 42ceac7e6e9ac93c7a73b8852d867c7208a15a82
-  RNGestureHandler: 42ec7c28dd02d540ed6c9159c57a98ff016492dc
+  RNGestureHandler: dec4645026e7401a0899f2846d864403478ff6a5
   RNGoogleSignin: 81521697b2c8f97f9a586ac7257b1a1d9b51b115
   RNImageCropPicker: 648356d68fbf9911a1016b3e3723885d28373eda
   RNReanimated: bec7736122a268883bdede07f1bf9cf4b40158db
-  RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
+  RNScreens: d3675ab2878704de70c9dae57fa5d024802404cc
   RNSVG: 53c661b76829783cdaf9b7a57258f3d3b4c28315
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d

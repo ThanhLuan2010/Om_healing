@@ -37,7 +37,7 @@ import DeliveryFail from "../modal/DeliveryFail";
 import LoadingScreen from "@screens/LoadingScreen";
 import CodePushUpdate from "../modal/CodePushUpdate";
 import TrialScreen from "@screens/TrialScreen";
-import SellComponent from "@components/SellComponent";
+import SellComponent from "@screens/Bottom/SellScreen";
 const Stack = createStackNavigator();
 
 export default function MainContainer() {

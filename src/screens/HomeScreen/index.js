@@ -1,5 +1,4 @@
 import { images } from "@assets";
-import { Block, Text } from "@components";
 import CourseComponent from "@components/CourseComponent";
 import NewsComponent from "@components/NewsComponent";
 import { theme } from "@theme";
@@ -11,18 +10,9 @@ import {
   StyleSheet,
   TouchableOpacity
 } from "react-native";
-import React, { useState, useRef } from "react";
 import { Block, Header, Text, TopNav } from "@components";
-import { theme } from "@theme";
-import { images } from "@assets";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Carousel from "react-native-reanimated-carousel";
-import { getSize, width } from "@utils/responsive";
-import CourseComponent from "@components/CourseComponent";
-
 import LinearGradient from "react-native-linear-gradient";
-import Carousel from "react-native-reanimated-carousel";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const dataCarousel = [
   {
@@ -115,9 +105,9 @@ const HomeScreen = () => {
     return <NewsComponent item={item} index={index} />;
   };
   return (
-    <Block>
-      <Header type="LinearBackground" />
-      <ScrollView>
+    <Block flex backgroundColor={theme.colors.background}>
+      <ScrollView contentContainerStyle={{paddingBottom:getSize.v(80)}} showsVerticalScrollIndicator={false}>
+        <Header type="LinearBackground" />
         <Block
           style={styles.carouselShadow}
           marginVertical={30}

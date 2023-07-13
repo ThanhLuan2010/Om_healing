@@ -9,39 +9,16 @@ import React from "react";
 import { Block, Text } from "@components";
 import { images } from "@assets";
 
-import { getSize } from "@utils/responsive";
+import { getSize, width } from "@utils/responsive";
 import { theme } from "@theme";
 
-export const data = [
-  {
-    image: images.bg_blur1,
-    name: "Chuông khắc ",
-    size: 16,
-    price_Url: "https://omhealing.com.vn/san-pham/",
-  },
-  {
-    image: images.bg_blur1,
-    name: "Chuông khắc ",
-    size: 16,
-    price_Url: "https://omhealing.com.vn/san-pham/",
-  },
-  {
-    image: images.bg_blur1,
-    name: "Chuông khắc ",
-    size: 16,
-    price_Url: "https://omhealing.com.vn/san-pham/",
-  },
-  {
-    image: images.bg_blur1,
-    name: "Chuông khắc ",
-    size: 16,
-    price_Url: "https://omhealing.com.vn/san-pham/",
-  },
-];
+
+
 const Card = (props) => {
+  
   return (
-    <Block style={styles.card}>
-      <Block alignCenter padding={12}>
+    <Block width={(width-60)/2}  marginHorizontal={10} backgroundColor={theme.colors.white}   >
+      <Block alignCenter >
         <Image source={props.image} style={styles.imgProduct} />
         <Text
           marginTop={6}
@@ -74,38 +51,16 @@ const Card = (props) => {
   );
 };
 
-const Empty = () => {
+
+const SellProductComponent = ({ dataProduct }) => {
   return (
-    <Block backgroundColor={"red"}>
-      <Text
-        color={theme.colors.gray}
-        fontFamily={theme.fonts.fontFamily.SourceSans3Italic}
-        size={18}
-      >
-        Hiện sản phẩm đang được cập nhật
-      </Text>
-    </Block>
-  );
-};
-const SellProductComponent = ({ ...props }) => {
-  return (
-    <ScrollView contentContainerStyle={styles.row}>
-      {props.dataProduct.map((item, index) => {
-        return (
-          <Block width={"50%"} row>
-            <Card
-              key={index}
-              id={item.id}
-              name={item.name}
-              image={item.image}
-              size={item.size}
-              price_Url={item.price_Url}
-            />
-          </Block>
-        );
-      })}
-      {props.dataProduct.length > 0 ? <></> : Empty()}
-    </ScrollView>
+      <Card
+        id={dataProduct.id}
+        name={dataProduct.name}
+        image={dataProduct.image}
+        size={dataProduct.size}
+        price_Url={dataProduct.price_Url}
+      />
   );
 };
 
@@ -113,27 +68,10 @@ export default SellProductComponent;
 
 const styles = StyleSheet.create({
   imgProduct: {
-    width: getSize.m(160),
-    height: getSize.m(160),
+    width: '100%',
+    height: getSize.v(160),
     resizeMode: "cover",
     borderRadius: 8,
   },
-  card: {
-    backgroundColor: theme.colors.white,
-    flex: 1,
-    alignItems: "center",
-    margin: 10,
-    borderRadius: 10,
-    shadowColor: theme.colors.black,
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
 
-    elevation: 3,
-  },
-  row: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-  },
 });

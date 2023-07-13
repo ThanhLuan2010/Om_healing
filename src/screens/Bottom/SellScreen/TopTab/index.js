@@ -35,7 +35,7 @@ const dataTopTab = [
 const TopTab = ({ onChangTab, indexTab }) => {
   return (
     <Block row>
-      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+      <ScrollView style={{paddingVertical:30}} contentContainerStyle={{ paddingHorizontal: 10 }} horizontal={true} showsHorizontalScrollIndicator={false}>
         {dataTopTab.map((item, index) => (
           <TouchableOpacity onPress={() => onChangTab(index)}>
             <LinearGradient
@@ -44,16 +44,16 @@ const TopTab = ({ onChangTab, indexTab }) => {
               key={index}
             >
               <Block
-                radius={indexTab === index ? 10 : 20}
+                radius={indexTab !== index ? 10 : 20}
                 paddingVertical={6}
                 paddingHorizontal={41}
-                backgroundColor={indexTab === index ? "white" : null}
+                backgroundColor={indexTab !== index ? "white" : null}
               >
                 <Text
                   size={18}
                   fontFamily={theme.fonts.fontFamily.SourceSans3SemiBold}
                   color={
-                    indexTab === index
+                    indexTab !== index
                       ? theme.colors.color_register
                       : theme.colors.white
                   }
@@ -75,6 +75,6 @@ const styles = StyleSheet.create({
   borderGradient: {
     padding: 1,
     borderRadius: 10,
-    margin: 10,
+    marginHorizontal: 10,
   },
 });
